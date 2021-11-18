@@ -4,7 +4,7 @@ import { getShelves, addShelf } from "../../store/shelf";
 import { Modal } from "../../context/Modal";
 import ShelfEditForm from "../ShelfEditForm";
 
-const ShelfContainer = (setSelectedShelf) => {
+const ShelfContainer = ({ setSelectedShelf }) => {
   const dispatch = useDispatch()
   const sessionUser = useSelector((state) => state.session.user);
   const userShelves = useSelector((state) => state.shelf)
@@ -44,7 +44,7 @@ const ShelfContainer = (setSelectedShelf) => {
         {shelfIds.map((shelfId) => {
           if (userShelves[shelfId] !== null) {
             return (
-              <li key={`Shelf ${shelfId}`}>
+              <li onClick={(event => { setSelectedShelf(shelfId) })} key={`Shelf ${shelfId}`}>
                 {userShelves[shelfId].shelfName}
               </li>
             )

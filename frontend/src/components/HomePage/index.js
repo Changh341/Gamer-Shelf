@@ -1,8 +1,8 @@
 import { useDispatch, useSelector } from "react-redux";
 import { Redirect } from "react-router";
 import { useEffect, useState } from 'react';
-import { getShelves } from "../../store/shelf";
 import ShelfContainer from "../ShelfContainer";
+import ShelfViewer from "../ShelfViewer";
 
 
 const HomePage = () => {
@@ -15,6 +15,9 @@ const HomePage = () => {
     <div>
       <div>
         <ShelfContainer setSelectedShelf={setSelectedShelf} />
+      </div>
+      <div>
+        {selectedShelf && <ShelfViewer selectedShelf={selectedShelf} />}
       </div>
     </div>
   )

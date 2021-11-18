@@ -6,7 +6,7 @@ module.exports = (sequelize, DataTypes) => {
     type: DataTypes.STRING
   }, {});
   Shelf.associate = function (models) {
-    Shelf.hasMany(models.Game, { onDelete: 'cascade' });
+    Shelf.hasMany(models.Game, { onDelete: 'cascade', foreignKey: 'shelfId' });
     Shelf.belongsTo(models.User, { foreignKey: 'userId' });
   };
   return Shelf;

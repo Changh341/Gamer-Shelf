@@ -18,16 +18,16 @@ if (!isProduction) {
   app.use(helmet({
     contentSecurityPolicy: false
   }))
-  app.use(
-    csurf({
-      cookie: {
-        secure: isProduction,
-        sameSite: isProduction && "Lax",
-        httpOnly: true
-      }
-    })
-  )
 }
+app.use(
+  csurf({
+    cookie: {
+      secure: isProduction,
+      sameSite: isProduction && "Lax",
+      httpOnly: true
+    }
+  })
+)
 app.use(routes);
 
 app.use((_req, _res, next) => {
@@ -54,7 +54,3 @@ app.use((err, _req, res, _next) => {
     stack: isProduction ? null : err.stack,
   });
 });
-
-
-
-module.exports = app;

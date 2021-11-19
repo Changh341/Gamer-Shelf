@@ -1,16 +1,21 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useHistory } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import ProfileButton from './ProfileButton';
 import './Navigation.css';
 
 function Navigation({ isLoaded }) {
   const sessionUser = useSelector(state => state.session.user);
+  const history = useHistory()
 
   let sessionLinks;
   if (sessionUser) {
     sessionLinks = (
-      <ProfileButton user={sessionUser} />
+      <>
+        <button onClick={(event) => history.push('/myshelf')}>My Shelf</button>
+        <button onClick={(event) => history.push('/browsegames')}>Browse Games</button>
+        <ProfileButton user={sessionUser} />
+      </>
     );
   } else {
     sessionLinks = (
@@ -22,11 +27,10 @@ function Navigation({ isLoaded }) {
   }
 
   return (
-    <ul>
-      <li>
-        {isLoaded && sessionLinks}
-      </li>
-    </ul>
+    <div id='navbar-div'>
+      {isLoaded && sessionLinks}
+    </div>
+
   );
 }
 

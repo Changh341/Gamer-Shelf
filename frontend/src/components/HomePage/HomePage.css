@@ -1,0 +1,9 @@
+#shelf-view {
+  display: flex;
+  flex-direction: row;
+
+}
+
+#hp-lists{
+  width: 200px;
+}

@@ -1,0 +1,8 @@
+.game-title-hover {
+  position: absolute;
+  background: linear-gradient(to bottom, transparent 0%, black 75%, black 100%);
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  color: white;
+}

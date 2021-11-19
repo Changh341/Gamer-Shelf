@@ -1,0 +1,22 @@
+#game-browser {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+#game-browser > * {
+  width: 200px;
+  height: 200px;
+  margin: 37px
+}
+
+.game-card {
+  margin: 30px;
+  padding: 10px;
+}
+.game-card > * {
+  box-sizing: border-box;
+  border: 1px solid red;
+  width: 250px;
+  height: 250px;
+}

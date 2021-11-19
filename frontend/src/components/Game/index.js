@@ -41,7 +41,6 @@ const Game = ({ game, setRefresh }) => {
   }
 
 
-
   const handleRemove = async () => {
     const response = await csrfFetch(`/api/shelves/${game.shelfId}/games/${game.id}`, {
       method: 'DELETE'
@@ -59,9 +58,13 @@ const Game = ({ game, setRefresh }) => {
   }
 
   return (
-    <li>
-      {game.name} Hours:{game.hoursProgressed} Status:{game.status}
-      <button onClick={(event) => { setShelfChange(true) }}>change shelf {shelfChange && (
+    <tr>
+      <td>{game.name}</td>
+      <td>{game.status}</td>
+      <td>{game.hoursProgressed}</td>
+      <td>3.2</td>
+      <td></td>
+      <button onClick={(event) => { setShelfChange(true) }}>reshelf {shelfChange && (
         <div onChange={(event) => { changingShelf(event.target.value) }} className="profile-dropdown">
           {shelfIds.map((shelfId) => {
             return (
@@ -75,7 +78,7 @@ const Game = ({ game, setRefresh }) => {
       }</button>
       <button>edit</button>
       <button onClick={(event) => { handleRemove() }}>x</button>
-    </li>
+    </tr>
   )
 }
 

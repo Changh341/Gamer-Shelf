@@ -4,7 +4,7 @@ const { check } = require('express-validator');
 const { handleValidationErrors } = require('../../utils/validation');
 
 const { setTokenCookie, requireAuth } = require('../../utils/auth');
-const { User, Shelf } = require('../../db/models');
+const { User, Shelf, Game, Review } = require('../../db/models');
 
 
 const router = express.Router();
@@ -91,5 +91,22 @@ router.delete('/:user/shelves/:shelfId', asyncHandler(async (req, res) => {
     }
   }
 }))
+
+router.get('/:user/games', asyncHandler(async (req, res) => {
+  const { user } = req.params
+  const games = await Game.findAll({
+    include: [{
+      model: Shelf,
+      attributes: ['shelfName'],
+      where: { userId: user }
+    },
+    { model: Review }],
+    attributes: ['name']
+  })
+  if (games) {
+    res.json(games)
+  }
+}))
+
 
 module.exports = router;

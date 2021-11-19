@@ -1,7 +1,7 @@
 const express = require('express');
 const asyncHandler = require('express-async-handler');
 
-const { Game, Review } = require('../../db/models');
+const { Game, Review, Shelf } = require('../../db/models');
 
 const router = express.Router();
 
@@ -21,15 +21,24 @@ router.get('/:id/games', asyncHandler(async (req, res) => {
 
 router.post('/:id/games', asyncHandler(async (req, res) => {
   const { id } = req.params;
-  const { name } = req.body;
-  const newGame = await Shelf.create({
+  const { name, user } = req.body;
+  const newGame = await Game.create({
     name,
     shelfId: id,
     status: 'Not Purchased',
     hoursProgressed: 0.0
   })
   if (newGame) {
-    res.json(newGame)
+    const game = await Game.findOne({
+      include: [{
+        model: Shelf,
+        attributes: ['shelfName'],
+        where: { userId: user }
+      },
+      { model: Review }],
+      attributes: ['name']
+    })
+    res.json(game)
   }
 }))
 

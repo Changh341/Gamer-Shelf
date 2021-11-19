@@ -3,7 +3,7 @@ import { Redirect } from "react-router";
 import { useEffect, useState } from 'react';
 import ShelfContainer from "../ShelfContainer";
 import ShelfViewer from "../ShelfViewer";
-
+import "./HomePage.css"
 
 const HomePage = () => {
   const dispatch = useDispatch()
@@ -12,11 +12,11 @@ const HomePage = () => {
 
   if (!sessionUser) return <Redirect to="/login" />;
   return (
-    <div>
-      <div>
+    <div id='shelf-view'>
+      <div id='hp-lists'>
         <ShelfContainer setSelectedShelf={setSelectedShelf} />
       </div>
-      <div>
+      <div id='hp-games'>
         {selectedShelf && <ShelfViewer selectedShelf={selectedShelf} />}
       </div>
     </div>

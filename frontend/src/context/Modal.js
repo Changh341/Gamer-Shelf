@@ -32,4 +32,13 @@ export function Modal({ type, onClose, children }) {
       modalNode
     );
   }
+  if (type === 'gameDetails') {
+    return ReactDOM.createPortal(
+      <div id='modal'>
+        <div id='modal-background' onClick={onClose} />
+        <div id='modal-content'>{children}</div>
+      </div>,
+      modalNode
+    );
+  }
 }

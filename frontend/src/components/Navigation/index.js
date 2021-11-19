@@ -12,9 +12,9 @@ function Navigation({ isLoaded }) {
   if (sessionUser) {
     sessionLinks = (
       <>
-        <button onClick={(event) => history.push('/myshelf')}>My Shelf</button>
-        <button onClick={(event) => history.push('/browsegames')}>Browse Games</button>
-        <ProfileButton user={sessionUser} />
+        <img id='logo' src='https://i.imgur.com/86TBwiD.png'></img>
+        <button className='navbar-btns' onClick={(event) => history.push('/myshelf')}>My Shelf</button>
+        <button className='navbar-btns' onClick={(event) => history.push('/browsegames')}>Browse Games</button>
       </>
     );
   } else {

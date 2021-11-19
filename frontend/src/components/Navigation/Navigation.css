@@ -9,11 +9,25 @@
 #navbar-div {
   display: flex;
   flex-direction: row;
+  align-items: flex-end;
   width: 1300px;
-  height: 75px;
+  height: 100px;
 }
 
 #navbar-div > * {
   width: auto;
   height: 25px;
+}
+
+#logo {
+  height: 100px;
+  width: 300px;
+}
+
+.navbar-btns {
+  background: transparent;
+  color: #00adec;
+  border: 1px solid #00adec;
+  cursor: pointer;
+  margin-left: 10px;
 }

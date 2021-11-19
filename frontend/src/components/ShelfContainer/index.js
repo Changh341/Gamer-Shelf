@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 import { getShelves, addShelf } from "../../store/shelf";
 import { Modal } from "../../context/Modal";
 import ShelfEditForm from "../ShelfEditForm";
+import './ShelfContainer.css'
 
 const ShelfContainer = ({ setSelectedShelf }) => {
   const dispatch = useDispatch()
@@ -38,13 +39,13 @@ const ShelfContainer = ({ setSelectedShelf }) => {
           <ShelfEditForm />
         </Modal>}
         <div>
-          <span>Game Shelf</span>
-          <button onClick={(event) => { setShowModal(true) }}>Edit</button>
+          <span id='gamer-shelf-header'>Gamer Shelf</span>
+          <button className='smaller-button' onClick={(event) => { setShowModal(true) }}>[Edit]</button>
         </div>
         {shelfIds.map((shelfId) => {
           if (userShelves[shelfId] !== null) {
             return (
-              <li onClick={(event => { setSelectedShelf(shelfId) })} key={`Shelf ${shelfId}`}>
+              <li className='clickable-shelf' onClick={(event => { setSelectedShelf(shelfId) })} key={`Shelf ${shelfId}`}>
                 {userShelves[shelfId].shelfName}
               </li>
             )

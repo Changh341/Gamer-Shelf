@@ -1,0 +1,17 @@
+.clickable-shelf {
+  list-style-type: none;
+  margin: 3px;
+  cursor: pointer;
+  color: lightblue;
+}
+
+#gamer-shelf-header {
+  font-size: 17px;
+  color: white;
+  font-weight: bold;
+}
+
+#shelf-container {
+  display: flex;
+  flex-direction: column;
+}

@@ -64,20 +64,19 @@ const Game = ({ game, setRefresh }) => {
       <td>{game.hoursProgressed}</td>
       <td>3.2</td>
       <td></td>
-      <button onClick={(event) => { setShelfChange(true) }}>reshelf {shelfChange && (
+      <button className='smaller-button' onClick={(event) => { setShelfChange(true) }}>[reshelf] {shelfChange && (
         <div onChange={(event) => { changingShelf(event.target.value) }} className="profile-dropdown">
           {shelfIds.map((shelfId) => {
             return (
-              <>
-                <input type="radio" value={shelfId} name={`game${game.id}`} checked={currentShelf(shelfId)} /><span>{userShelves[shelfId].shelfName}</span>
-              </>
+              <div>
+                <input type="radio" value={shelfId} name={`game${game.id}`} checked={currentShelf(shelfId)} /><span className='radio-label'>{userShelves[shelfId].shelfName}</span>
+              </div>
             )
           })}
         </div>
       )
       }</button>
-      <button>edit</button>
-      <button onClick={(event) => { handleRemove() }}>x</button>
+      <button className='x-button' onClick={(event) => { handleRemove() }}>x</button>
     </tr>
   )
 }

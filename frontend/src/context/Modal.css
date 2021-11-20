@@ -21,4 +21,16 @@
 #modal-content {
   position: absolute;
   background-color:white;
+  color: white;
 }
+
+#modal-content-gameDetails {
+  position: absolute;
+  background-color:#1f2126;
+  width: 1000px;
+  height: 700px;
+  color: #00adec;
+  border-radius: 12px;
+  overflow: auto;
+}
+

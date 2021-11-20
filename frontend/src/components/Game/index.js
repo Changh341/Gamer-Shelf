@@ -6,6 +6,8 @@ import './game.css'
 const Game = ({ game, setRefresh }) => {
   const userShelves = useSelector((state) => state.shelf)
   let shelfIds = Object.keys(userShelves)
+  const [isLoaded, setIsLoaded] = useState(false);
+  const [image, setImage] = useState([]);
 
 
   const [shelfChange, setShelfChange] = useState(false)
@@ -21,6 +23,16 @@ const Game = ({ game, setRefresh }) => {
 
     return () => document.removeEventListener("click", closeMenu);
   }, [shelfChange]);
+
+  useEffect(() => {
+    fetch(`/api/games/${game.name}/images`)
+      .then((res) => res.json())
+      .then((result) => {
+        setImage(result);
+        setIsLoaded(true);
+      });
+  }, []);
+
 
   const changingShelf = async (id) => {
     const payload = {
@@ -56,27 +68,39 @@ const Game = ({ game, setRefresh }) => {
       return false
     }
   }
+  const imageSetter = () => {
+    if (isLoaded) {
+      return (
+        <img className='tiny-cover-image' src={`${image}`} ></img>
+      )
+    } else {
+      <span>LOADING IMAGE</span>
+    }
+  }
 
   return (
     <tr>
+      <td>{imageSetter()}</td>
       <td>{game.name}</td>
       <td>{game.status}</td>
       <td>{game.hoursProgressed}</td>
       <td>3.2</td>
       <td></td>
-      <button className='smaller-button' onClick={(event) => { setShelfChange(true) }}>[reshelf] {shelfChange && (
-        <div onChange={(event) => { changingShelf(event.target.value) }} className="profile-dropdown">
-          {shelfIds.map((shelfId) => {
-            return (
-              <div>
-                <input type="radio" value={shelfId} name={`game${game.id}`} checked={currentShelf(shelfId)} /><span className='radio-label'>{userShelves[shelfId].shelfName}</span>
-              </div>
-            )
-          })}
-        </div>
-      )
-      }</button>
-      <button className='x-button' onClick={(event) => { handleRemove() }}>x</button>
+      <td className='tools-box'>
+        <button className='smaller-button' onClick={(event) => { setShelfChange(true) }}>[reshelf] {shelfChange && (
+          <div onChange={(event) => { changingShelf(event.target.value) }} className="profile-dropdown">
+            {shelfIds.map((shelfId) => {
+              return (
+                <div>
+                  <input type="radio" value={shelfId} name={`game${game.id}`} checked={currentShelf(shelfId)} /><span className='radio-label'>{userShelves[shelfId].shelfName}</span>
+                </div>
+              )
+            })}
+          </div>
+        )
+        }</button>
+        <button className='x-button' onClick={(event) => { handleRemove() }}>x</button>
+      </td>
     </tr>
   )
 }

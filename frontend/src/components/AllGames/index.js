@@ -2,16 +2,17 @@ import { useDispatch, useSelector } from "react-redux";
 import { useEffect, useState } from 'react';
 import { getShelves, addShelf } from "../../store/shelf";
 import Game from "../Game";
-import './ShelfViewer.css'
 
-const ShelfViewer = ({ selectedShelf }) => {
+
+const AllGames = ({ selectedShelf }) => {
   const [isLoaded, setIsLoaded] = useState(false);
   const [items, setItems] = useState([]);
   const [refresh, setRefresh] = useState(false)
+  const sessionUser = useSelector((state) => state.session.user);
 
   useEffect(() => {
     setIsLoaded(false)
-    fetch(`/api/shelves/${selectedShelf}/games`)
+    fetch(`/api/users/${sessionUser.id}/games/all`)
       .then((res) => res.json())
       .then((result) => {
         setItems(result);
@@ -20,7 +21,7 @@ const ShelfViewer = ({ selectedShelf }) => {
       });
   }, [selectedShelf, refresh]);
 
-
+  console.log(items)
   return (
     <>
       <table id='game-table'>
@@ -33,7 +34,7 @@ const ShelfViewer = ({ selectedShelf }) => {
           <th>Review</th>
           <th></th>
         </tr>
-        {!isLoaded ? 'Loading...' : items.map((game) => {
+        {!isLoaded ? 'Loading...' : items?.map((game) => {
           return (
             <Game game={game} setRefresh={setRefresh} />
           )
@@ -43,4 +44,4 @@ const ShelfViewer = ({ selectedShelf }) => {
   )
 }
 
-export default ShelfViewer
+export default AllGames

@@ -20,7 +20,7 @@ const GameCard = ({ game }) => {
 
         src={game.imageURL}>
       </img>
-      {showModal && <Modal type='shelfEditModal' onClose={() => setShowModal(false)}>
+      {showModal && <Modal type='gameDetails' onClose={() => setShowModal(false)}>
         <GameDetail game={game} />
       </Modal>}
     </>

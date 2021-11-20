@@ -1,0 +1,61 @@
+.detail-cover-art {
+  width: 250px;
+  height: 320px;
+}
+
+.top-half-details {
+  display: flex;
+  flex-direction: row;
+  padding: 10px;
+}
+
+.bottom-half-details {
+  display: flex;
+  flex-direction: row;
+}
+
+.title-context-div {
+  padding: 12px;
+}
+
+.listed-details {
+  font-style: italic;
+  padding: 4px;
+}
+
+.detail-names {
+  margin-left: 9px;
+  padding: 2px;
+}
+
+.add-to-shelf-btn {
+  margin-left: 9px;
+  padding: 2px;
+  background: transparent;
+  color: #00adec;
+  border: 1px solid #00adec;
+  cursor: pointer;
+}
+
+.extra-details-div {
+  width: 280px;
+}
+
+.cancel-btn {
+  background: transparent;
+  color: #00adec;
+  border: 1px solid #00adec;
+  cursor: pointer;
+}
+
+.detail-shelfname {
+  font-style: italic;
+  font-weight: 800;
+  padding: 4px;
+}
+
+.reviews-div {
+  border: 1px solid red;
+  width: 680px;
+  height: 300px;
+}

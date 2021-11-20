@@ -34,14 +34,15 @@ const ShelfContainer = ({ setSelectedShelf }) => {
 
   return (
     <>
-      <div>
+      <div id='shelf-container'>
         {showModal && <Modal type='shelfEditModal' onClose={() => setShowModal(false)}>
           <ShelfEditForm />
         </Modal>}
         <div>
-          <span id='gamer-shelf-header'>Gamer Shelf</span>
+          <span id='gamer-shelf-header'>Your Shelf</span>
           <button className='smaller-button' onClick={(event) => { setShowModal(true) }}>[Edit]</button>
         </div>
+        <li className='clickable-shelf' onClick={(event) => { setSelectedShelf(null) }}>All games</li>
         {shelfIds.map((shelfId) => {
           if (userShelves[shelfId] !== null) {
             return (
@@ -55,11 +56,11 @@ const ShelfContainer = ({ setSelectedShelf }) => {
         })}
       </div>
       <div>
-        {!addShelfInput && <button onClick={(event) => setAddShelfInput(true)}>Add Shelf</button>}
+        {!addShelfInput && <button className='standard-btn' onClick={(event) => setAddShelfInput(true)}>Add Shelf</button>}
         {addShelfInput && <div>
-          <input placeholder='Enter shelf name' value={addShelfValue} onChange={(event) => { setAddShelfValue(event.target.value) }}></input>
-          <button onClick={(event) => { handleSubmit() }}>Add</button>
-          <button onClick={(event) => { setAddShelfInput(false) }}>Close</button>
+          <input className='standard-input' placeholder='Enter shelf name' value={addShelfValue} onChange={(event) => { setAddShelfValue(event.target.value) }}></input>
+          <button className='standard-btn' onClick={(event) => { handleSubmit() }}>Add</button>
+          <button className='standard-btn' onClick={(event) => { setAddShelfInput(false) }}>Close</button>
         </div>}
       </div>
     </>

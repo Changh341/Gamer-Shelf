@@ -9,7 +9,7 @@
 #navbar-div {
   display: flex;
   flex-direction: row;
-  align-items: flex-end;
+  align-items: center;
   width: 1300px;
   height: 100px;
 }
@@ -29,5 +29,10 @@
   color: #00adec;
   border: 1px solid #00adec;
   cursor: pointer;
-  margin-left: 10px;
+  text-decoration: none;
+  padding: 6px;
+}
+
+.navbar-btns-active {
+  text-decoration: underline;
 }

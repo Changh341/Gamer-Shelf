@@ -8,9 +8,11 @@ import * as sessionActions from './store/session';
 import Navigation from './components/Navigation';
 import { Modal } from './context/Modal';
 import GameBrowser from './components/GameBrowser';
+import User from './components/User';
 function App() {
   const dispatch = useDispatch();
   const [isLoaded, setIsLoaded] = useState(false);
+
   useEffect(() => {
     dispatch(sessionActions.restoreUser()).then(() => setIsLoaded(true));
   }, [dispatch]);
@@ -33,6 +35,9 @@ function App() {
               </Route>
               <Route path='/browsegames'>
                 <GameBrowser />
+              </Route>
+              <Route path='/user/page'>
+                <User />
               </Route>
             </Switch>
           )}

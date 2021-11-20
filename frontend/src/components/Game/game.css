@@ -2,3 +2,18 @@
   color: black;
 }
 
+td {
+  color: white;
+}
+
+th {
+  color: white;
+  font-weight: 900;
+  font-style: italic;
+}
+
+.tiny-cover-image{
+  box-sizing: border-box;
+  width: 100px;
+  height: 125px;
+}

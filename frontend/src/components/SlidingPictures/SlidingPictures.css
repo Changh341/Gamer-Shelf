@@ -1,0 +1,30 @@
+.sliding-container {
+  border-bottom: 1px solid grey;
+  border-top: 1px solid grey;
+  padding: 20px;
+  overflow: hidden;
+  width: 100%;
+  margin: 0 auto;	
+	position: absolute;
+  z-index: -1;
+	display: flex;
+}
+
+.sliding-inner {
+  display: flex;
+		position: relative;
+		animation: marquee 15s linear infinite;
+    justify-content: space-around;;
+}
+
+.sliding-image {
+  display: block;
+  margin-left: 20px;
+  width: 100px;
+  height: 150px;
+}
+
+@keyframes marquee {
+	0%   { transform: translateX(0%); }
+	100% { transform: translateX(-100%); }
+}

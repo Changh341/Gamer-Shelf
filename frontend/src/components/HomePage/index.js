@@ -4,11 +4,13 @@ import { useEffect, useState } from 'react';
 import ShelfContainer from "../ShelfContainer";
 import ShelfViewer from "../ShelfViewer";
 import "./HomePage.css"
+import AllGames from "../AllGames";
 
 const HomePage = () => {
   const dispatch = useDispatch()
   const sessionUser = useSelector((state) => state.session.user);
   const [selectedShelf, setSelectedShelf] = useState(null)
+
 
   if (!sessionUser) return <Redirect to="/login" />;
   return (
@@ -17,7 +19,7 @@ const HomePage = () => {
         <ShelfContainer setSelectedShelf={setSelectedShelf} />
       </div>
       <div id='hp-games'>
-        {selectedShelf && <ShelfViewer selectedShelf={selectedShelf} />}
+        {selectedShelf ? <ShelfViewer selectedShelf={selectedShelf} /> : <AllGames selectedShelf={selectedShelf} />}
       </div>
     </div>
   )

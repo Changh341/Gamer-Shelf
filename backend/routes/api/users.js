@@ -108,5 +108,20 @@ router.get('/:user/games', asyncHandler(async (req, res) => {
   }
 }))
 
+router.get('/:user/games/all', asyncHandler(async (req, res) => {
+  const { user } = req.params
+  const games = await Game.findAll({
+    include: [{
+      model: Shelf,
+      attributes: ['shelfName'],
+      where: { userId: user }
+    },
+    { model: Review }],
+  })
+  if (games) {
+    res.json(games)
+  }
+}))
+
 
 module.exports = router;

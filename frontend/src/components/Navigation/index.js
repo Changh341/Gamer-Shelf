@@ -11,25 +11,25 @@ function Navigation({ isLoaded }) {
   let sessionLinks;
   if (sessionUser) {
     sessionLinks = (
-      <>
+      <div id='navbar-div'>
         <img id='logo' src='https://i.imgur.com/86TBwiD.png'></img>
-        <button className='navbar-btns' onClick={(event) => history.push('/myshelf')}>My Shelf</button>
-        <button className='navbar-btns' onClick={(event) => history.push('/browsegames')}>Browse Games</button>
-      </>
+        <NavLink activeClassName='navbar-btns-active' className='navbar-btns' to='/myshelf'>My Shelf</NavLink>
+        <NavLink activeClassName='navbar-btns-active' className='navbar-btns' to='/browsegames'>Browse Games</NavLink>
+        <NavLink activeClassName='navbar-btns-active' className='navbar-btns' to='/user/page'>User</NavLink>
+      </div>
     );
   } else {
     sessionLinks = (
       <>
-        <NavLink to='/login'>Login</NavLink>
-        <NavLink to="/signup">Sign Up</NavLink>
       </>
     );
   }
 
   return (
-    <div id='navbar-div'>
+    <>
       {isLoaded && sessionLinks}
-    </div>
+    </>
+
 
   );
 }

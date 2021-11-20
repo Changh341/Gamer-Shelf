@@ -1,8 +1,7 @@
 import { useDispatch, useSelector } from "react-redux";
-import { Redirect } from "react-router";
 import { useEffect, useState } from 'react';
-import { Modal } from "../../context/Modal";
 import { addAGame } from "../../store/game";
+import './GameDetails.css'
 
 const GameDetail = ({ game }) => {
   const dispatch = useDispatch()
@@ -25,25 +24,47 @@ const GameDetail = ({ game }) => {
 
   return (
     <div>
-      {game.name}
-      {game.context}
-      {game.category}
-      {game.developer}
-      {game.release}
-      {games[game.name] ? <span>On shelf {games[game.name].Shelf.shelfName}</span> :
-        <button onClick={(event) => { setShowAddGame(true) }}>Add to Shelf{showAddGame && (
-          <div onChange={(event) => { addGame(event.target.value) }} className="profile-dropdown">
-            {shelfIds.map((shelfId) => {
-              return (
-                <>
-                  <input type="radio" value={shelfId} name={`game${game.id}`} /><span>{userShelves[shelfId].shelfName}</span>
-                </>
+      <div className='top-half-details'>
+        <div><img className='detail-cover-art' src={`${game.imageURL}`}></img></div>
+        <div className='title-context-div'>
+          <h2>
+            {game.name}
+          </h2>
+          {game.context}
+        </div>
+      </div>
+      <div className='bottom-half-details'>
+        <div className='extra-details-div'>
+          <li className='detail-names'>
+            Category: <span className='listed-details'>{game.category}</span>
+          </li>
+          <li className='detail-names'>
+            Developer: <span className='listed-details'>{game.developers}</span>
+          </li>
+          <li className='detail-names'>
+            Release: <span className='listed-details'>{game.release}</span>
+          </li>
+          <div>
+            {games[game.name] ? <span className='detail-names'>On shelf: <span className='detail-shelfname'>{games[game.name].Shelf.shelfName}</span></span> :
+              <button className='add-to-shelf-btn' onClick={(event) => { setShowAddGame(true) }}>Add to Shelf{showAddGame && (
+                <div onChange={(event) => { addGame(event.target.value) }} className="profile-dropdown">
+                  {shelfIds.map((shelfId) => {
+                    return (
+                      <>
+                        <input type="radio" value={shelfId} name={`game${game.id}`} /><span>{userShelves[shelfId].shelfName}</span>
+                      </>
+                    )
+                  })}
+                </div>
               )
-            })}
+              }</button>}
+            {showAddGame && <button className='cancel-btn' onClick={(event) => { setShowAddGame(false) }}>Cancel</button>}
           </div>
-        )
-        }</button>}
-      {showAddGame && <button onClick={(event) => { setShowAddGame(false) }}>Cancel</button>}
+        </div>
+        <div className='reviews-div'>
+          Reviews
+        </div>
+      </div>
     </div>
   )
 }

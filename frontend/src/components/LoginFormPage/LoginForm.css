@@ -1,0 +1,55 @@
+#login-content {
+  width: 400px;
+  height: 300px;
+  background-color: black;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#login-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 1300px;
+  height: 700px;
+}
+
+#login-form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+
+#sliding-one {
+  position:absolute;
+  width: 99.2%;
+  margin: 0 auto;	
+  top:0;
+  left:-2%;
+}
+
+#sliding-two {
+  position: absolute;
+  top: 37%;
+  left:-2%;
+  width: 99.2%;
+  margin: 0 auto;	
+}
+
+#sliding-three {
+  position: absolute;
+  bottom: 26%;
+  left:-2%;
+  width: 99.2%;
+  margin: 0 auto;	
+}
+
+#login-btn {
+  background: transparent;
+  color: #00adec;
+  border: 1px solid #00adec;
+  cursor: pointer;
+}

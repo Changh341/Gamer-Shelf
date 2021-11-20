@@ -1,0 +1,14 @@
+.clickable-shelf {
+  list-style-type: none;
+  margin: 3px;
+  cursor: pointer;
+  width: max-content;
+  color: lightblue;
+
+}
+
+#gamer-shelf-header {
+  font-size: 17px;
+  color: white;
+  font-weight: bold;
+}

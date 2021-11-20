@@ -1,4 +1,56 @@
 /* TODO Add site wide styles */
 text {
-  font-family: Arial, sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
+  color: white;
+}
+body {  
+  display: flex;
+  justify-content: center;
+  width: 1500px;
+  height: auto;
+  background: #171a21;;
+}
+
+
+td{
+  text-align: center;
+}
+
+.smaller-button {
+  font-size: 9px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  margin: 3px;
+  color: lightblue;
+}
+
+.smaller-button:hover {
+  text-decoration: underline;
+}
+
+.x-button {
+  background: transparent;
+  cursor: pointer;
+  border: none;
+  color: red;
+}
+
+.standard-btn {
+  border: 1px solid white;
+  color: white;
+  background-color: #171a21;
+  cursor: pointer;
+}
+
+.standard-input {
+  border: 1px solid white;
+  color: lightblue;
+  background-color: #171a21;
+  outline: none;
+}
+
+li {
+  list-style: none;
+  color: white;
 }

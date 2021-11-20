@@ -1,3 +1,38 @@
 .profile-dropdown {
   position: absolute;
+  z-index: 1;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+}
+
+#navbar-div {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 1300px;
+  height: 100px;
+}
+
+#navbar-div > * {
+  width: auto;
+  height: 25px;
+}
+
+#logo {
+  height: 100px;
+  width: 300px;
+}
+
+.navbar-btns {
+  background: transparent;
+  color: #00adec;
+  border: 1px solid #00adec;
+  cursor: pointer;
+  text-decoration: none;
+  padding: 6px;
+}
+
+.navbar-btns-active {
+  text-decoration: underline;
 }

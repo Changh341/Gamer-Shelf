@@ -7,8 +7,7 @@ module.exports = (sequelize, DataTypes) => {
     imageURL: DataTypes.STRING,
     shelfId: DataTypes.INTEGER,
     status: DataTypes.STRING,
-    hoursProgressed: DataTypes.DECIMAL(10, 1),
-    released: DataTypes.STRING
+    hoursProgressed: DataTypes.DECIMAL(10, 1)
   }, {});
   Game.associate = function (models) {
     Game.belongsTo(models.Shelf, { foreignKey: 'shelfId' });

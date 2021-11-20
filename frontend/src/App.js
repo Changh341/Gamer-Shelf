@@ -7,29 +7,42 @@ import HomePage from './components/HomePage'
 import * as sessionActions from './store/session';
 import Navigation from './components/Navigation';
 import { Modal } from './context/Modal';
+import GameBrowser from './components/GameBrowser';
+import User from './components/User';
 function App() {
   const dispatch = useDispatch();
   const [isLoaded, setIsLoaded] = useState(false);
+
   useEffect(() => {
     dispatch(sessionActions.restoreUser()).then(() => setIsLoaded(true));
   }, [dispatch]);
 
   return (
     <>
-      <Navigation isLoaded={isLoaded} />
-      {isLoaded && (
-        <Switch>
-          <Route path='/signup'>
-            <SignupFormPage />
-          </Route>
-          <Route path='/login'>
-            <LoginFormPage />
-          </Route>
-          <Route path='/myshelf' exact={true}>
-            <HomePage />
-          </Route>
-        </Switch>
-      )}
+      <div id='whole'>
+        <Navigation isLoaded={isLoaded} />
+        <div id='wrapped'>
+          {isLoaded && (
+            <Switch>
+              <Route path='/signup'>
+                <SignupFormPage />
+              </Route>
+              <Route path='/login'>
+                <LoginFormPage />
+              </Route>
+              <Route path='/myshelf' exact={true}>
+                <HomePage />
+              </Route>
+              <Route path='/browsegames'>
+                <GameBrowser />
+              </Route>
+              <Route path='/user/page'>
+                <User />
+              </Route>
+            </Switch>
+          )}
+        </div>
+      </div>
     </>
   );
 }

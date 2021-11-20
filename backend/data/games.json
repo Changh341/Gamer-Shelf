@@ -1,0 +1,182 @@
+{
+  "Halo 3": {
+    "name": "Halo 3",
+    "developers": "Bungie",
+    "release": "Sept 25, 2007",
+    "imageURL": "https://upload.wikimedia.org/wikipedia/en/b/b4/Halo_3_final_boxshot.JPG",
+    "context": "Halo 3 is a 2007 first-person shooter video game developed by Bungie for the Xbox 360 console. The third installment in the Halo franchise, the game concludes the story arc begun in 2001's Halo: Combat Evolved and continued in 2004's Halo 2. Halo 3's story centers on the interstellar war between twenty-sixth century humanity, a collection of alien races known as the Covenant, and the alien parasite Flood. The player assumes the role of the Master Chief, a cybernetically enhanced supersoldier, as he battles the Covenant and the Flood. The game features vehicles, weapons, and gameplay elements not present in previous titles of the series, as well as the addition of saved gameplay films, file sharing, and the Forge map editor—a utility which allows the player to perform modifications to multiplayer levels.",
+    "metacritic": "94%",
+    "category": "First Person Shooter"
+  },
+  "Bioshock": {
+    "name": "Bioshock",
+    "developers": "2K Games",
+    "release": "Aug 21, 2007",
+    "imageURL": "https://upload.wikimedia.org/wikipedia/en/6/6d/BioShock_cover.jpg",
+    "context": "BioShock is a 2007 first-person shooter game developed by 2K Boston (later Irrational Games) and 2K Australia, and published by 2K Games. It is the first game in the BioShock series. The game's concept was developed by Irrational's creative lead, Ken Levine, and incorporates ideas by 20th century dystopian and utopian thinkers such as Ayn Rand, George Orwell, and Aldous Huxley, as well as historical figures such as John D. Rockefeller, Jr. and Walt Disney. The game is considered a spiritual successor to the System Shock series, on which many of Irrational's team, including Levine, had worked previously.",
+    "metacritic": "96%",
+    "category": "First Person Shooter"
+  },
+  "Last of Us": {
+    "name": "Last of Us",
+    "developers": "Naughty Dog",
+    "release": "Jul 29, 2014",
+    "imageURL": "https://upload.wikimedia.org/wikipedia/en/4/46/Video_Game_Cover_-_The_Last_of_Us.jpg",
+    "context": "The Last of Us is a 2013 action-adventure game developed by Naughty Dog and published by Sony Computer Entertainment. Players control Joel, a smuggler tasked with escorting a teenage girl, Ellie, across a post-apocalyptic United States. The Last of Us is played from a third-person perspective. Players use firearms and improvised weapons, and can use stealth to defend against hostile humans and cannibalistic creatures infected by a mutated fungus in the genus Cordyceps. In the online multiplayer mode, up to eight players engage in cooperative and competitive gameplay.",
+    "metacritic": "95%",
+    "category": "Action-adventure"
+  },
+  "Raft": {
+    "name": "Raft",
+    "developers": "Redbeet Interactive",
+    "release": "Early Access",
+    "imageURL": "https://upload.wikimedia.org/wikipedia/en/thumb/c/c4/Raftt.jpg/330px-Raftt.jpg",
+    "context": "Raft is an open world survival video game developed by Swedish developer Redbeet Interactive, and published by Axolot Games. The game was released as an early access title on 23 May 2018 on Steam, after initial release as a free download on indie platform Itch.io.",
+    "metacritic": "TBD",
+    "category": "Survival"
+  },
+  "Battlefield 4": {
+    "name": "Battlefield 4",
+    "developers": "DICE",
+    "release": "Oct 29, 2013",
+    "imageURL": "https://upload.wikimedia.org/wikipedia/en/7/75/Battlefield_4_cover_art.jpg",
+    "context": "Battlefield 4 is a first-person shooter video game developed by video game developer DICE and published by Electronic Arts. It is a sequel to 2011's Battlefield 3, with the story taking place six years later during the fictional 'War of 2020'. The title was first released in October 2013 for Microsoft Windows, PlayStation 3, and Xbox 360; then later in November for PlayStation 4 and Xbox One.",
+    "metacritic": "81%",
+    "category": "First Person Shooter"
+  },
+  "The Witness": {
+    "name": "The Witness",
+    "developers": "Thekla, Inc",
+    "release": "Jan 26, 2016",
+    "imageURL": "https://upload.wikimedia.org/wikipedia/en/f/f4/The_Witness_cover.jpg",
+    "context": "The Witness is a 2016 puzzle video game developed and published by Thekla, Inc.[a] Inspired by Myst, the game involves the exploration of an open world island filled with natural and man-made structures. The player progresses by solving puzzles, which are based on interactions with grids presented on panels around the island or paths hidden within the environment. The game provides no direct instructions for how these puzzles are to be solved, requiring the player to identify the meaning of symbols in the puzzles. A central design element to the game was how these puzzles are presented so that the player can achieve a moment of inspiration through trial and error and gain that comprehension themselves.",
+    "metacritic": "87%",
+    "category": "First Person Puzzle"
+  },
+  "Valorant": {
+    "name": "Valorant",
+    "developers": "Riot Games",
+    "release": "Jun 2, 2020",
+    "imageURL": "https://cdna.artstation.com/p/assets/images/images/038/999/504/large/suke-8.jpg?1624647293",
+    "context": "Valorant is a free-to-play first-person hero shooter developed and published by Riot Games, for Microsoft Windows. First teased under the codename Project A in October 2019, the game began a closed beta period with limited access on April 7, 2020, followed by an official release on June 2, 2020. The development of the game started in 2014.",
+    "metacritic": "80%",
+    "category": "First Person Shooter"
+  },
+  "League of Legends": {
+    "name": "League of Legends",
+    "developers": "Riot Games",
+    "release": "Mar 1, 2013",
+    "imageURL": "https://e.snmc.io/lk/l/x/51f9c8d7985ba1a02328b4c74110dd36/5288877",
+    "context": "League of Legends (LoL), commonly referred to as League, is a 2009 multiplayer online battle arena video game developed and published by Riot Games. Inspired by Defense of the Ancients, a custom map for Warcraft III, Riot's founders sought to develop a stand-alone game in the same genre. Since its release in October 2009, the game has been free-to-play and is monetized through purchasable character customization. The game is available for Microsoft Windows and macOS.",
+    "metacritic": "89%",
+    "category": "MOBA"
+  },
+  "World of Warcraft": {
+    "name": "World of Warcraft",
+    "developers": "Blizzard Entertainment",
+    "release": "Nov 23, 2004",
+    "imageURL": "https://upload.wikimedia.org/wikipedia/en/9/91/WoW_Box_Art1.jpg",
+    "context": "World of Warcraft (WoW) is a massively multiplayer online role-playing game (MMORPG) released in 2004 by Blizzard Entertainment. Set in the Warcraft fantasy universe, World of Warcraft takes place within the world of Azeroth, approximately four years after the events of the previous game in the series, Warcraft III: The Frozen Throne.[3] The game was announced in 2001, and was released for the 10th anniversary of the Warcraft franchise on November 23, 2004. Since launch, World of Warcraft has had eight major expansion packs: The Burning Crusade (2007), Wrath of the Lich King (2008), Cataclysm (2010), Mists of Pandaria (2012), Warlords of Draenor (2014), Legion (2016), Battle for Azeroth (2018), and Shadowlands (2020).",
+    "metacritic": "93%",
+    "category": "Massive Multiplayer Online Role-playing"
+  },
+  "Half-Life": {
+    "name": "Half-Life",
+    "developers": "Valve",
+    "release": "Nov 19, 1998",
+    "imageURL": "https://upload.wikimedia.org/wikipedia/en/f/fa/Half-Life_Cover_Art.jpg",
+    "context": "Half-Life is a first-person shooter (FPS) game developed by Valve and published by Sierra Studios for Windows in 1998. It was Valve's debut product and the first game in the Half-Life series. Players assume the role of Gordon Freeman, a scientist who must escape the Black Mesa Research Facility after it is invaded by aliens. The core gameplay consists of fighting alien and human enemies with a variety of weapons and solving puzzles.",
+    "metacritic": "96%",
+    "category": "First Person Shooter"
+  },
+  "Half-Life 2": {
+    "name": "Half-Life 2",
+    "developers": "Valve",
+    "release": "Nov 16, 2004",
+    "imageURL": "https://upload.wikimedia.org/wikipedia/en/2/25/Half-Life_2_cover.jpg",
+    "context": "Half-Life 2 is a 2004 first-person shooter game developed and published by Valve. Like the original Half-Life (1998), it combines shooting, puzzles, and storytelling, and adds features such as vehicles and physics-based gameplay. Set roughly twenty years after the events of the first game, players control Gordon Freeman as he joins a resistance movement to liberate the Earth from the control of an alien empire called the Combine.",
+    "metacritic": "96%",
+    "category": "First Person Shooter"
+  },
+  "Portal": {
+    "name": "Portal",
+    "developers": "Valve",
+    "release": "Oct 10, 2007",
+    "imageURL": "https://upload.wikimedia.org/wikipedia/en/9/9f/Portal_standalonebox.jpg",
+    "context": "Portal is a 2007 puzzle-platform game developed and published by Valve. It was released in a bundle, The Orange Box, for Windows, Xbox 360 and PlayStation 3, and has been since ported to other systems, including Mac OS X, Linux, and Android (via Nvidia Shield).",
+    "metacritic": "90%",
+    "category": "First Person Puzzle"
+  },
+  "Bloons TD6": {
+    "name": "Bloons TD6",
+    "developers": "Ninja Kiwi",
+    "release": "Jun 14, 2018",
+    "imageURL": "https://m.media-amazon.com/images/M/MV5BZTljNTZhMDUtYmQ1Mi00Y2QyLThiMDEtNjRlOWRmOWE4MDMwXkEyXkFqcGdeQXVyNTgyNTA4MjM@._V1_FMjpg_UX1000_.jpg",
+    "context": "Bloons TD 6 is a 2018 tower defense video game and the sixth game in the Bloons Tower Defense series, developed and published by Ninja Kiwi. It was first released in June 2018 for iOS and Android.[2] The game was later ported onto Steam, first released on Microsoft Windows in December 2018 and later macOS in March 2020.",
+    "metacritic": "TBD",
+    "category": "Tower Defense"
+  },
+  "Elder Scrolls IV: Oblivion": {
+    "name": "Elder Scrolls IV: Oblivion",
+    "developers": "Bethesda",
+    "release": "Mar 20, 2006",
+    "imageURL": "https://upload.wikimedia.org/wikipedia/en/4/4b/The_Elder_Scrolls_IV_Oblivion_cover.png",
+    "context": "The Elder Scrolls IV: Oblivion is a 2006 open-world action role-playing video game developed by Bethesda Game Studios and published by Bethesda Softworks and the Take-Two Interactive division 2K Games. It is the fourth installment in the Elder Scrolls action fantasy series, following 2002's The Elder Scrolls III: Morrowind, and was released for Microsoft Windows and Xbox 360 in March 2006, and on PlayStation 3 in March 2007, with a mobile version of the game released on May 2, 2006.",
+    "metacritic": "94%",
+    "category": "Role-playing"
+  },
+  "Elder Scrolls V: Skyrim": {
+    "name": "Elder Scrolls V: Skyrim",
+    "developers": "Bethesda",
+    "release": "Nov 11, 2011",
+    "imageURL": "https://upload.wikimedia.org/wikipedia/en/1/15/The_Elder_Scrolls_V_Skyrim_cover.png",
+    "context": "The Elder Scrolls V: Skyrim is an open-world action role-playing video game developed by Bethesda Game Studios and published by Bethesda Softworks. It is the fifth main installment in the Elder Scrolls series, following 2006's The Elder Scrolls IV: Oblivion, and was released worldwide for Microsoft Windows, PlayStation 3, and Xbox 360 on November 11, 2011.",
+    "metacritic": "94%",
+    "category": "Role-playing"
+  },
+  "Age of Empires 4": {
+    "name": "Age of Empires 4",
+    "developers": "Relic Entertainment",
+    "release": "Oct 28, 2021",
+    "imageURL": "https://upload.wikimedia.org/wikipedia/en/0/08/Age_of_Empires_IV_Cover_Art.png",
+    "context": "Age of Empires IV is a real-time strategy video game developed by Relic Entertainment in partnership with World's Edge and published by Xbox Game Studios. It is the fourth installment of the Age of Empires series. The game was released October 28, 2021 for Windows.",
+    "metacritic": "81%",
+    "category": "Real Time Strategy"
+  },
+  "Starcraft": {
+    "name": "Starcraft",
+    "developers": "Blizzard Entertainment",
+    "release": "Aug 14, 2017",
+    "imageURL": "https://upload.wikimedia.org/wikipedia/en/thumb/9/93/StarCraft_box_art.jpg/220px-StarCraft_box_art.jpg",
+    "context": "StarCraft is a military science fiction media franchise created by Chris Metzen and James Phinney and owned by Blizzard Entertainment.[1] The series, set in the beginning of the 26th century, centers on a galactic struggle for dominance among four species—the adaptable and mobile Terrans, the ever-evolving insectoid Zerg, the powerful and enigmatic Protoss, and the godlike Xel'Naga creator race—in a distant part of the Milky Way galaxy known as the Koprulu Sector. The series debuted with the video game StarCraft in 1998. It has grown to include a number of other games as well as eight novelizations, two Amazing Stories articles, a board game, and other licensed merchandise such as collectible statues and toys.",
+    "metacritic": "88%",
+    "category": "Real Time Strategy"
+  },
+  "Grand Theft Auto V": {
+    "name": "Grand Theft Auto V",
+    "developers": "Rockstar",
+    "release": "Sept 17, 2013",
+    "imageURL": "https://upload.wikimedia.org/wikipedia/en/a/a5/Grand_Theft_Auto_V.png",
+    "context": "Grand Theft Auto V is a 2013 action-adventure game developed by Rockstar North and published by Rockstar Games. It is the seventh main entry in the Grand Theft Auto series, following 2008's Grand Theft Auto IV, and the fifteenth instalment overall. Set within the fictional state of San Andreas, based on Southern California, the single-player story follows three protagonists—retired bank robber Michael De Santa, street gangster Franklin Clinton, and drug dealer and gunrunner Trevor Philips—and their attempts to commit heists while under pressure from a corrupt government agency and powerful criminals. The open world design lets players freely roam San Andreas' open countryside and the fictional city of Los Santos, based on Los Angeles.",
+    "metacritic": "97%",
+    "category": "Action-adventure"
+  },
+  "Minecraft": {
+    "name": "Minecraft",
+    "developers": "Mojang Studios",
+    "release": "Nov 18, 2011",
+    "imageURL": "https://upload.wikimedia.org/wikipedia/en/5/51/Minecraft_cover.png",
+    "context": "Minecraft is a sandbox video game developed by the Swedish video game developer Mojang Studios. The game was created by Markus 'Notch' Persson in the Java programming language. Following several early private testing versions, it was first made public in May 2009 before fully releasing in November 2011, with Jens Bergensten then taking over development. Minecraft has since been ported to several other platforms and is the best-selling video game of all time, with over 238 million copies sold and nearly 140 million monthly active users as of 2021.",
+    "metacritic": "93%",
+    "category": "Survival"
+  },
+  "Call of Duty 4": {
+    "name": "Call of Duty 4",
+    "developers": "Infinity Ward",
+    "release": "Nov 5, 2007",
+    "imageURL": "https://upload.wikimedia.org/wikipedia/en/5/5f/Call_of_Duty_4_Modern_Warfare.jpg",
+    "context": "Call of Duty 4: Modern Warfare is a 2007 first-person shooter video game developed by Infinity Ward and published by Activision. It is the fourth main installment in the Call of Duty series. The game breaks away from the World War II setting of previous entries and is instead set in modern times. Developed for over two years, Modern Warfare was released in November 2007 for the PlayStation 3, Xbox 360 and Microsoft Windows, and was ported to the Wii as Call of Duty: Modern Warfare – Reflex Edition in 2009.",
+    "metacritic": "92%",
+    "category": "First Person Shooter"
+  }
+}

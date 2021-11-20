@@ -1,5 +1,5 @@
 import { csrfFetch } from "./csrf.js";
-const initialState = { Loading: null }
+const initialState = { null: null }
 
 const LOAD = 'shelves/LOAD';
 const ADD = 'shelves/ADD';

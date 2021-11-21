@@ -30,7 +30,7 @@ function App() {
               <Route path='/login'>
                 <LoginFormPage />
               </Route>
-              <Route path='/myshelf' exact={true}>
+              <Route path='/' exact={true}>
                 <HomePage />
               </Route>
               <Route path='/browsegames'>

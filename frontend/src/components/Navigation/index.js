@@ -13,7 +13,7 @@ function Navigation({ isLoaded }) {
     sessionLinks = (
       <div id='navbar-div'>
         <img id='logo' src='https://i.imgur.com/86TBwiD.png'></img>
-        <NavLink activeClassName='navbar-btns-active' className='navbar-btns' to='/myshelf'>My Shelf</NavLink>
+        <NavLink activeClassName='navbar-btns-active' className='navbar-btns' to='/'>My Shelf</NavLink>
         <NavLink activeClassName='navbar-btns-active' className='navbar-btns' to='/browsegames'>Browse Games</NavLink>
         <NavLink activeClassName='navbar-btns-active' className='navbar-btns' to='/user/page'>User</NavLink>
       </div>

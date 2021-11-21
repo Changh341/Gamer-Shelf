@@ -11,7 +11,6 @@ const ShelfEditForm = () => {
   let shelfIds = Object.keys(userShelves)
   const handleChange = (selectedOption) => {
     setTypeSelect(selectedOption)
-    console.log(`Option selected:`, selectedOption);
   };
   return (
     <div>

@@ -1,0 +1,21 @@
+.shelf-edit-line{
+  display: flex;
+  flex-direction: row;
+  height: 30px;
+  margin-top: 10px;
+  padding: 8px;
+}
+
+.right-edit-line{
+  display: flex;
+  justify-content: flex-end;
+  width: 40%;
+}
+
+.left-edit-line{
+  width:60%
+}
+
+.shelf-name-edit {
+  color: lightblue;
+}

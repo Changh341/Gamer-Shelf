@@ -6,7 +6,7 @@ const SlidingPictures = ({ pictures }) => {
       <div className='sliding-inner'>
         {pictures.map((picture) => {
           return (
-            <img className='sliding-image' src={`${picture}`} />
+            <img key={`${picture}`} className='sliding-image' src={`${picture}`} />
           )
         })}
 
@@ -15,7 +15,7 @@ const SlidingPictures = ({ pictures }) => {
       <div className='sliding-inner'>
         {pictures.map((picture) => {
           return (
-            <img className='sliding-image' src={`${picture}`} />
+            <img key={`${picture}`} className='sliding-image' src={`${picture}`} />
           )
         })}
       </div>

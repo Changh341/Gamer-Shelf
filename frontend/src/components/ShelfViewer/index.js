@@ -24,20 +24,24 @@ const ShelfViewer = ({ selectedShelf }) => {
   return (
     <>
       <table id='game-table'>
-        <tr>
-          <th></th>
-          <th>Game Name</th>
-          <th>Status</th>
-          <th>Hours</th>
-          <th>Avg Rating</th>
-          <th>Review</th>
-          <th></th>
-        </tr>
-        {!isLoaded ? 'Loading...' : items.map((game) => {
-          return (
-            <Game game={game} setRefresh={setRefresh} />
-          )
-        })}
+        <thead>
+          <tr>
+            <th></th>
+            <th>Game Name</th>
+            <th>Status</th>
+            <th>Hours</th>
+            <th>Avg Rating</th>
+            <th>Review</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          {!isLoaded ? <tr><td>'Loading...'</td></tr> : items.map((game) => {
+            return (
+              <Game key={`${game.name}`} game={game} setRefresh={setRefresh} />
+            )
+          })}
+        </tbody>
       </table>
     </>
   )

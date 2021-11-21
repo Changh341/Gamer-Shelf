@@ -1,4 +1,4 @@
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import { useEffect, useState } from 'react';
 import { csrfFetch } from "../../store/csrf";
 import './game.css'
@@ -87,7 +87,7 @@ const Game = ({ game, setRefresh }) => {
       <td>3.2</td>
       <td></td>
       <td className='tools-box'>
-        <button className='smaller-button' onClick={(event) => { setShelfChange(true) }}>[reshelf] {shelfChange && (
+        <button className='smaller-button' onClick={(event) => { setShelfChange(true) }}>[reshelf]{shelfChange && (
           <div onChange={(event) => { changingShelf(event.target.value) }} className="profile-dropdown">
             {shelfIds.map((shelfId) => {
               return (

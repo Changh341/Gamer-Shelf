@@ -52,7 +52,7 @@ const GameBrowser = () => {
       {sorted.map((game) => {
         return (
           <div className='game-card' key={items[game].name}>
-            <GameCard game={items[game]} />
+            <GameCard key={`${items[game].name}`} game={items[game]} />
           </div>
         )
       })

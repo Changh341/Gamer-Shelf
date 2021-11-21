@@ -32,9 +32,7 @@ const GameDetail = ({ game }) => {
         <select className='navbar-btns' value={selectShelf} onChange={(event) => { setSelectShelf(event.target.value) }}>
           {shelfIds.map((shelfId) => {
             return (
-              <>
-                <option value={shelfId} >{userShelves[shelfId].shelfName}</option>
-              </>
+              <option key={`shelf ${shelfId}`} value={shelfId} >{userShelves[shelfId].shelfName}</option>
             )
           })}
         </select>

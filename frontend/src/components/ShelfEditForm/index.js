@@ -17,7 +17,7 @@ const ShelfEditForm = () => {
       {shelfIds.map((shelfId) => {
         if (userShelves[shelfId] !== null) {
           return (
-            <ShelfSelect shelf={userShelves[shelfId]} />
+            <ShelfSelect key={`${shelfId}`} shelf={userShelves[shelfId]} />
           )
         } else {
           return null

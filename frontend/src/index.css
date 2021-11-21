@@ -54,3 +54,9 @@ li {
   list-style: none;
   color: white;
 }
+
+.input-bar {
+  border: 1px solid #00adec;
+  background-color: #1f2126;
+  color: lightblue;
+}

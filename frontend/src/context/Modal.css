@@ -18,11 +18,6 @@
   background-color: rgba(0, 0, 0, 0.7);
 }
 
-#modal-content {
-  position: absolute;
-  background-color:white;
-  color: white;
-}
 
 #modal-content-gameDetails {
   position: absolute;
@@ -34,3 +29,11 @@
   overflow: auto;
 }
 
+
+#modal-content-editShelf {
+  position: absolute;
+  background-color:#171a21;
+  width: 500px;
+  height: 500px;
+  overflow: auto;
+}

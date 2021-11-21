@@ -3,6 +3,7 @@ import { Redirect } from "react-router";
 import { useEffect, useState } from 'react';
 import ShelfContainer from "../ShelfContainer";
 import { editShelf, removeShelf } from "../../store/shelf";
+import './ShelfSelect.css'
 
 
 const ShelfSelect = ({ shelf }) => {
@@ -21,7 +22,6 @@ const ShelfSelect = ({ shelf }) => {
 
   const handleChange = (selectedOption) => {
     setTypeSelect(selectedOption)
-    console.log(`Option selected:`, selectedOption);
   };
 
   const handleNameChange = async (name) => {
@@ -47,28 +47,32 @@ const ShelfSelect = ({ shelf }) => {
   }
 
   return (
-    <li key={`Edit shelf ${shelf.id}`}>
-      <button onClick={(event) => { handleDelete(shelf.id) }}>x</button>
-      {!renameInput && shelf.shelfName}
-      <span>{!renameInput && '(3)'}</span>
-      {!renameInput && <button onClick={(event) => { setRenameInput(true) }}>Rename</button>}
-      {renameInput &&
-        <>
-          <input value={renameValue} onChange={(event) => { setRenameValue(event.target.value) }}></input>
-          <button onClick={(event) => { handleNameChange(renameValue) }}>Save</button>
-          <button onClick={(event) => {
-            setRenameInput(false);
-            setRenameValue(shelf.shelfName)
-          }}>Cancel</button>
-        </>
-      }
-      <select value={typeSelect ? typeSelect : shelf.type} onChange={(event) => { handleChange(event.target.value) }} >
-        <option value='Tracked'>Tracked</option>
-        <option value='Not Tracked'>Not Tracked</option>
-        <option value='Ongoing'>Ongoing</option>
-      </select>
+    <li className='shelf-edit-line' key={`Edit shelf ${shelf.id}`}>
+      <div className='left-edit-line'>
+        <button className='x-button' onClick={(event) => { handleDelete(shelf.id) }}>x</button>
+        {!renameInput && <span className='shelf-name-edit'>{shelf.shelfName}</span>}
+        <span >{!renameInput}</span>
+        {renameInput &&
+          <>
+            <input className='input-bar' value={renameValue} onChange={(event) => { setRenameValue(event.target.value) }}></input>
+            <button className='navbar-btns' onClick={(event) => { handleNameChange(renameValue) }}>Save</button>
+            <button className='navbar-btns' onClick={(event) => {
+              setRenameInput(false);
+              setRenameValue(shelf.shelfName)
+            }}>Cancel</button>
+          </>
+        }
+      </div>
+      <div className='right-edit-line'>
+        {!renameInput && <button className='navbar-btns' onClick={(event) => { setRenameInput(true) }}>Rename</button>}
+        <select className='navbar-btns' value={typeSelect ? typeSelect : shelf.type} onChange={(event) => { handleChange(event.target.value) }} >
+          <option value='Tracked'>Tracked</option>
+          <option value='Not Tracked'>Not Tracked</option>
+          <option value='Ongoing'>Ongoing</option>
+        </select>
 
-      <button onClick={(event) => { handleTypeChange(typeSelect) }}>Change</button>
+        <button className='navbar-btns' onClick={(event) => { handleTypeChange(typeSelect) }}>Change</button>
+      </div>
     </li>
   )
 }

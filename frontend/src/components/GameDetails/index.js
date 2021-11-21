@@ -9,17 +9,39 @@ const GameDetail = ({ game }) => {
   const userShelves = useSelector((state) => state.shelf)
   const games = useSelector((state) => state.game)
   const [showAddGame, setShowAddGame] = useState(false)
+  const [selectShelf, setSelectShelf] = useState(false)
   let shelfIds = Object.keys(userShelves)
 
 
   const addGame = (shelfId) => {
-    const payload = {
-      user: sessionUser.id,
-      name: game.name,
-      shelfId,
+    if (shelfId) {
+
+      const payload = {
+        user: sessionUser.id,
+        name: game.name,
+        shelfId,
+      }
+      dispatch(addAGame(payload))
+      setShowAddGame(false)
     }
-    dispatch(addAGame(payload))
-    setShowAddGame(false)
+  }
+
+  const buttonSelectForm = (id) => {
+    return (
+      <div className='add-shelf-select'>
+        <select className='navbar-btns' value={selectShelf} onChange={(event) => { setSelectShelf(event.target.value) }}>
+          {shelfIds.map((shelfId) => {
+            return (
+              <>
+                <option value={shelfId} >{userShelves[shelfId].shelfName}</option>
+              </>
+            )
+          })}
+        </select>
+        <button className='navbar-btns' onClick={(event) => { addGame(id) }}>Add to Shelf</button>
+      </div>
+
+    )
   }
 
   return (
@@ -45,20 +67,7 @@ const GameDetail = ({ game }) => {
             Release: <span className='listed-details'>{game.release}</span>
           </li>
           <div>
-            {games[game.name] ? <span className='detail-names'>On shelf: <span className='detail-shelfname'>{games[game.name].Shelf.shelfName}</span></span> :
-              <button className='add-to-shelf-btn' onClick={(event) => { setShowAddGame(true) }}>Add to Shelf{showAddGame && (
-                <div onChange={(event) => { addGame(event.target.value) }} className="profile-dropdown">
-                  {shelfIds.map((shelfId) => {
-                    return (
-                      <>
-                        <input type="radio" value={shelfId} name={`game${game.id}`} /><span>{userShelves[shelfId].shelfName}</span>
-                      </>
-                    )
-                  })}
-                </div>
-              )
-              }</button>}
-            {showAddGame && <button className='cancel-btn' onClick={(event) => { setShowAddGame(false) }}>Cancel</button>}
+            {games[game.name] ? <span className='detail-names'>On shelf: <span className='detail-shelfname'>{games[game.name].Shelf.shelfName}</span></span> : buttonSelectForm(selectShelf)}
           </div>
         </div>
         <div className='reviews-div'>

@@ -14,7 +14,7 @@ function LoginFormPage({ setIsLogged }) {
   const [password, setPassword] = useState("");
   const [errors, setErrors] = useState([]);
 
-  if (sessionUser) return <Redirect to="/myshelf" />;
+  if (sessionUser) return <Redirect to="/" />;
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -48,6 +48,7 @@ function LoginFormPage({ setIsLogged }) {
             </ul>
             <label>
               Username or Email
+              &nbsp;
               <input
                 type="text"
                 value={credential}
@@ -57,6 +58,7 @@ function LoginFormPage({ setIsLogged }) {
             </label>
             <label>
               Password
+              &nbsp;
               <input
                 type="password"
                 value={password}

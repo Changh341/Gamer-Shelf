@@ -4,6 +4,7 @@ import { csrfFetch } from "../../store/csrf";
 import './game.css'
 import { Modal } from "../../context/Modal";
 import ReviewEditSubmit from '../ReviewEditSubmit'
+import GameDetail from "../GameDetails";
 
 
 const Game = ({ game, setRefresh }) => {
@@ -13,6 +14,7 @@ const Game = ({ game, setRefresh }) => {
   const [isLoaded, setIsLoaded] = useState(false);
   const [image, setImage] = useState([]);
   const [showModal, setShowModal] = useState(false)
+  const [showGameDetail, setShowGameDetail] = useState(false)
 
 
 
@@ -109,7 +111,7 @@ const Game = ({ game, setRefresh }) => {
     <>
       <tr>
         <td>{imageSetter()}</td>
-        <td>{game.name}</td>
+        <td><button onClick={(event) => { setShowGameDetail(true) }} className='game-shelf-portal'>{game.name}</button></td>
         <td>{game.status}</td>
         <td>{game.hoursProgressed}</td>
         <td>{renderEditWrite()}</td>
@@ -131,6 +133,9 @@ const Game = ({ game, setRefresh }) => {
       </tr>
       {showModal && <Modal type='reviewModal' onClose={() => setShowModal(false)}>
         <ReviewEditSubmit game={game} setShowModal={setShowModal} />
+      </Modal>}
+      {showGameDetail && <Modal type='gameDetails' onClose={() => setShowGameDetail(false)}>
+        <GameDetail game={game} setShowModal={setShowGameDetail} />
       </Modal>}
     </>
   )

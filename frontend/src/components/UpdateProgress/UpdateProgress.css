@@ -1,0 +1,26 @@
+#update-progress-container {
+  display: flex;
+  flex-direction: column;
+  padding: 12px;
+}
+
+
+#update-progress-form {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;  
+}
+  
+.update-input-div {
+  display: flex;
+  justify-content: center;
+  margin: 5px;
+}
+
+.label {
+  color: white;
+}
+
+#hours-input {
+  width: 100px;
+}

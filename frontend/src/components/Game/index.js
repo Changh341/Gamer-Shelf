@@ -5,6 +5,7 @@ import './game.css'
 import { Modal } from "../../context/Modal";
 import ReviewEditSubmit from '../ReviewEditSubmit'
 import GameDetail from "../GameDetails";
+import UpdateProgress from "../UpdateProgress";
 
 
 const Game = ({ game, setRefresh }) => {
@@ -15,11 +16,15 @@ const Game = ({ game, setRefresh }) => {
   const [image, setImage] = useState([]);
   const [showModal, setShowModal] = useState(false)
   const [showGameDetail, setShowGameDetail] = useState(false)
-
-
-
-
+  const [showUpdateProgress, setShowUpdateProgress] = useState(false)
+  const [gameStatus, setGameStatus] = useState('')
+  const [gameProgress, setGameProgress] = useState('')
   const [shelfChange, setShelfChange] = useState(false)
+
+  useEffect(() => {
+    setGameProgress(game.hoursProgressed)
+    setGameStatus(game.status)
+  }, [])
 
   useEffect(() => {
     if (!shelfChange) return;
@@ -112,10 +117,11 @@ const Game = ({ game, setRefresh }) => {
       <tr>
         <td>{imageSetter()}</td>
         <td><button onClick={(event) => { setShowGameDetail(true) }} className='game-shelf-portal'>{game.name}</button></td>
-        <td>{game.status}</td>
-        <td>{game.hoursProgressed}</td>
+        <td>{gameStatus}</td>
+        <td>{gameProgress}</td>
         <td>{renderEditWrite()}</td>
         <td className='tools-box'>
+          <button className='smaller-button' onClick={(event) => { setShowUpdateProgress(true) }}>[update progress]</button>
           <button className='smaller-button' onClick={(event) => { setShelfChange(true) }}>[reshelf]{shelfChange && (
             <div onChange={(event) => { changingShelf(event.target.value) }} className="profile-dropdown">
               {shelfIds.map((shelfId) => {
@@ -136,6 +142,9 @@ const Game = ({ game, setRefresh }) => {
       </Modal>}
       {showGameDetail && <Modal type='gameDetails' onClose={() => setShowGameDetail(false)}>
         <GameDetail game={game} setShowModal={setShowGameDetail} />
+      </Modal>}
+      {showUpdateProgress && <Modal type='progressUpdate' onClose={() => setShowUpdateProgress(false)}>
+        <UpdateProgress game={game} setShowModal={setShowUpdateProgress} setGameProgress={setGameProgress} setGameStatus={setGameStatus} />
       </Modal>}
     </>
   )

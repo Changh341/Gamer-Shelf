@@ -115,4 +115,26 @@ router.delete('/:id/reviews', asyncHandler(async (req, res) => {
   }
 }))
 
+router.put('/:id/progress', asyncHandler(async (req, res) => {
+  const { id } = req.params
+  const { status, hoursProgressed } = req.body
+  const updated = Game.update({
+    status,
+    hoursProgressed
+  }, { where: { id } })
+  if (updated) {
+    const response = await Game.findOne({
+      include: [{
+        model: Shelf,
+        attributes: ['id'],
+        include: { model: User, attributes: ['username'] }
+      },
+      { model: Review }],
+      where: { id },
+      attributes: ['name', 'id']
+    })
+    res.json(response)
+  }
+}))
+
 module.exports = router;

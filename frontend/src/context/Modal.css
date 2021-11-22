@@ -45,3 +45,11 @@
   height: 340px;
   overflow: auto;
 }
+
+#modal-progress-update {
+  position: absolute;
+  background-color:#171a21;
+  width: 270px;
+  height: 150px;
+  overflow: auto;
+}

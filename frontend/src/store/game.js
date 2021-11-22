@@ -5,6 +5,7 @@ const LOAD = 'games/LOAD'
 const ADD = 'games/ADD'
 const REVIEW = 'games/REVIEW'
 const DESTROY = 'review/DESTROY'
+const UPDATE = 'games/UPDATE'
 
 const load = (games) => ({
   type: LOAD,
@@ -23,6 +24,11 @@ const review = (game) => ({
 
 const deletion = (game) => ({
   type: DESTROY,
+  game
+})
+
+const updating = (game) => ({
+  type: UPDATE,
   game
 })
 
@@ -112,6 +118,25 @@ export const destroyAReview = (payload) => async (dispatch) => {
   }
 }
 
+export const updateAGame = (payload) => async (dispatch) => {
+  const { gameId } = payload
+  try {
+    const response = await csrfFetch(`/api/games/${gameId}/progress`, {
+      method: 'PUT',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(payload)
+    })
+    if (response.ok) {
+      const game = await response.json()
+      dispatch(updating(game))
+    }
+  } catch (error) {
+    return error
+  }
+}
+
 function gameReducer(state = initialState, action) {
   let newState = {};
   switch (action.type) {
@@ -132,6 +157,9 @@ function gameReducer(state = initialState, action) {
       newState = { ...state }
       newState[action.game.name].Review = null
       return newState
+    case UPDATE:
+      newState = { ...state }
+      newState[action.game.name] = action.game
     default: return state
   }
 }

@@ -27,7 +27,7 @@ router.get('/:name/reviews', asyncHandler(async (req, res) => {
     include: [{
       model: Shelf,
       attributes: ['id'],
-      include: { model: User, attributes: ['username'] }
+      include: { model: User, attributes: ['username', 'id'] }
     },
     { model: Review }],
     where: { name: name },

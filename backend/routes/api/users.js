@@ -2,6 +2,7 @@ const express = require('express');
 const asyncHandler = require('express-async-handler');
 const { check } = require('express-validator');
 const { handleValidationErrors } = require('../../utils/validation');
+const faker = require('faker')
 
 const { setTokenCookie, requireAuth } = require('../../utils/auth');
 const { User, Shelf, Game, Review } = require('../../db/models');
@@ -122,6 +123,76 @@ router.get('/:user/games/all', asyncHandler(async (req, res) => {
     res.json(games)
   }
 }))
+
+router.post('/demo', asyncHandler(async (req, res) => {
+  const randomRating = Math.floor(Math.random() * 5) + 1;
+  const email = faker.internet.email()
+  const username = faker.internet.userName()
+  const password = faker.internet.password()
+
+  const user = await User.signup({ email, username, password });
+  const newShelf = await Shelf.create({
+    shelfName: 'Interested',
+    userId: user.id,
+    type: 'Not Tracked'
+  })
+  const newShelf1 = await Shelf.create({
+    shelfName: 'Playing',
+    userId: user.id,
+    type: 'Tracked'
+  })
+  const newShelf2 = await Shelf.create({
+    shelfName: 'On-Off Playing',
+    userId: user.id,
+    type: 'Ongoing'
+  })
+  const newShelf3 = await Shelf.create({
+    shelfName: 'Completed',
+    userId: user.id,
+    type: 'Tracked'
+  })
+  const newGame = await Game.create({
+    name: 'Bioshock',
+    shelfId: newShelf.id,
+    status: 'Not Purchased',
+    hoursProgressed: 0.0
+  })
+  const newGame1 = await Game.create({
+    name: 'Battlefield 4',
+    shelfId: newShelf1.id,
+    status: 'Playing',
+    hoursProgressed: 3.0
+  })
+
+  const newGame2 = await Game.create({
+    name: 'Minecraft',
+    shelfId: newShelf2.id,
+    status: 'Stopped',
+    hoursProgressed: 0.0
+  })
+
+  const newGame3 = await Game.create({
+    name: 'Raft',
+    shelfId: newShelf3.id,
+    status: 'Completed',
+    hoursProgressed: 51.0
+  })
+
+  const newReview = await Review.create({
+    content: faker.lorem.sentence(),
+    rating: randomRating,
+    gameId: newGame3.id
+  })
+
+
+  await setTokenCookie(res, user);
+
+  return res.json({
+    user,
+  });
+}),
+);
+
 
 
 module.exports = router;

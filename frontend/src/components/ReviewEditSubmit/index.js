@@ -51,7 +51,7 @@ const ReviewEditSubmit = ({ game, setShowModal }) => {
 
   return (
     <div className='review-post-edit-container'>
-      <text>{game.name}</text>
+      <span className='game-title-review'>{game.name}</span>
       <h4 className='header-review'>Your review {userGames[game.name].Review ? <button className='x-button' onClick={(event) => { handleDelete() }}>x</button> : null}</h4>
 
       <form className='review-form'>

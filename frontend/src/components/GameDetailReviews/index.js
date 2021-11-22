@@ -2,12 +2,17 @@ import { useDispatch, useSelector } from "react-redux";
 import { Redirect } from "react-router";
 import { useEffect, useState } from 'react';
 import './GameDetailReviews.css'
+import { Modal } from "../../context/Modal";
+import ReviewEditSubmit from "../ReviewEditSubmit";
 
 const GameDetailReviews = ({ game, setAvgRate }) => {
   const dispatch = useDispatch()
   const sessionUser = useSelector((state) => state.session.user);
+  const userGames = useSelector((state) => state.game)
   const [isLoaded, setIsLoaded] = useState(false);
   const [items, setItems] = useState([]);
+  const [showModal, setShowModal] = useState(false)
+
 
   const allRating = []
 
@@ -19,7 +24,7 @@ const GameDetailReviews = ({ game, setAvgRate }) => {
         setItems(result);
         setIsLoaded(true);
       });
-  }, [game]);
+  }, [game, userGames]);
 
   const calcAvgRate = () => {
     if (allRating) {
@@ -33,6 +38,13 @@ const GameDetailReviews = ({ game, setAvgRate }) => {
     calcAvgRate()
   }, [allRating])
 
+  const checkIfUser = (id) => {
+    if (id === sessionUser.id) {
+      return (
+        <button onClick={(event) => { setShowModal(true) }} className='smaller-button'>[Edit]</button>
+      )
+    }
+  }
 
 
   return (
@@ -43,9 +55,10 @@ const GameDetailReviews = ({ game, setAvgRate }) => {
             <div key={`div ${item.Review.id}`}>
               <li key={item.Review.id} className='review-container'>
                 <div className='username-rating-container'>
-                  <span className='username-review'>{item.Shelf.User.username}</span>
+                  <span className='username-review'>{item.Shelf.User.username}{checkIfUser(item.Shelf.User.id)}</span>
+
                   <div className='rating-container'>
-                    <span className='rating-review'>Rated {allRating.push(Number(item.Review.rating)) && item.Review.rating}</span>
+                    <span className='rating-review'>Rated {allRating.push(Number(item.Review.rating)) && item.Review.rating}/5.0</span>
                   </div>
                 </div>
                 <div>
@@ -54,6 +67,9 @@ const GameDetailReviews = ({ game, setAvgRate }) => {
                   </span>
                 </div>
               </li>
+              {showModal && <Modal type='reviewModal' onClose={() => setShowModal(false)}>
+                <ReviewEditSubmit game={game} setShowModal={setShowModal} />
+              </Modal>}
             </div>
           )
 

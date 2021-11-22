@@ -5,10 +5,22 @@ import ShelfContainer from "../ShelfContainer";
 import ShelfViewer from "../ShelfViewer";
 import "./HomePage.css"
 import AllGames from "../AllGames";
+import { getUserGames } from "../../store/game";
 
 const HomePage = () => {
   const dispatch = useDispatch()
   const sessionUser = useSelector((state) => state.session.user);
+  const getAllGame = (userId) => {
+    dispatch(getUserGames(userId))
+  }
+
+  useEffect(() => {
+    if (sessionUser.id) {
+      getAllGame(sessionUser.id)
+    }
+  }, []);
+
+
   const [selectedShelf, setSelectedShelf] = useState(null)
 
 

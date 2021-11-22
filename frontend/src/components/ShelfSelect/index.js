@@ -6,7 +6,7 @@ import { editShelf, removeShelf } from "../../store/shelf";
 import './ShelfSelect.css'
 
 
-const ShelfSelect = ({ shelf }) => {
+const ShelfSelect = ({ shelf, setSelectedShelf }) => {
   const dispatch = useDispatch()
   const sessionUser = useSelector((state) => state.session.user);
 
@@ -14,6 +14,7 @@ const ShelfSelect = ({ shelf }) => {
 
   const handleDelete = (shelfId) => {
     dispatch(removeShelf(shelfId))
+    setSelectedShelf(null)
   }
 
   const [typeSelect, setTypeSelect] = useState(false)

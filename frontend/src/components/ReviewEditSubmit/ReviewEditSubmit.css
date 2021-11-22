@@ -1,0 +1,48 @@
+.review-post-edit-container {
+  display: flex;
+  flex-direction: column;
+  padding: 15px;
+}
+
+.review-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.review-select {
+  width: 45px;
+  margin-right: 10px;
+}
+
+#edit-review {
+  width: 40px;
+}
+
+.text-area-review {
+  height: 150px;
+  color: lightblue;
+  background-color: transparent;
+  border: 1px solid #00adec;
+  margin: 2px;
+  cursor: auto;
+  outline: none;
+}
+
+.header-review {
+  color: lightblue;
+}
+
+.review-bottom-container {
+  display: flex;
+  width: 100%;
+  margin-top: 5px;
+  justify-content: flex-end;
+}
+
+#post-review {
+  width: 40px;
+}
+
+#delete-review {
+  
+}

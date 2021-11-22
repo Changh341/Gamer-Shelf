@@ -24,6 +24,8 @@ const GameBrowser = () => {
   }, []);
 
   const gamesCount = Object.keys(userGames)
+
+
   useEffect(() => {
     if (sessionUser.id) {
       getAllGame(sessionUser.id)

@@ -51,4 +51,14 @@ export function Modal({ type, onClose, children }) {
       modalNode
     );
   }
+
+  if (type === 'progressUpdate') {
+    return ReactDOM.createPortal(
+      <div id='modal'>
+        <div id='modal-background' onClick={onClose} />
+        <div id='modal-progress-update'>{children}</div>
+      </div>,
+      modalNode
+    );
+  }
 }

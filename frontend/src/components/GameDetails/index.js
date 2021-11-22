@@ -12,6 +12,8 @@ const GameDetail = ({ game }) => {
   const [showAddGame, setShowAddGame] = useState(false)
   const [selectShelf, setSelectShelf] = useState(false)
   const [avgRate, setAvgRate] = useState(0)
+  const [details, setDetails] = useState([]);
+  const [isLoaded, setIsLoaded] = useState(false)
   let shelfIds = Object.keys(userShelves)
 
 
@@ -44,33 +46,65 @@ const GameDetail = ({ game }) => {
     )
   }
 
+  useEffect(async () => {
+    if (!game.context) {
+      const response = await fetch(`/api/games/${game.name}`)
+      if (response.ok) {
+        const data = await response.json()
+        setDetails(data)
+        setIsLoaded(true)
+      }
+    } else {
+      setIsLoaded(true)
+    }
+  }, [])
+
+  const imageSetter = () => {
+    if (isLoaded) {
+      if (game.context) {
+        return (
+          <img className='detail-cover-art' src={game.imageURL}></img>
+        )
+      } else {
+        return (
+          <img className='detail-cover-art' src={details.imageURL}></img>
+        )
+      }
+    } else {
+      <span>LOADING IMAGE</span>
+    }
+  }
+
+
+
+
   return (
     <div>
       <div className='top-half-details'>
-        <div><img className='detail-cover-art' src={`${game.imageURL}`}></img></div>
+        <div>{imageSetter()}</div>
         <div className='title-context-div'>
           <h2>
             {game.name}
           </h2>
-          {game.context}
+          {game.context ? game.context : details.context}
         </div>
       </div>
       <div className='bottom-half-details'>
         <div className='extra-details-div'>
           <li className='detail-names'>
-            Category: <span className='listed-details'>{game.category}</span>
+            Category: <span className='listed-details'>{game.category ? game.category : details.category}</span>
           </li>
           <li className='detail-names'>
-            Developer: <span className='listed-details'>{game.developers}</span>
+            Developer: <span className='listed-details'>{game.developers ? game.developers : details.developers}</span>
           </li>
           <li className='detail-names'>
-            Metacritic: <span className='listed-details'>{game.metacritic}</span>
+            Metacritic: <span className='listed-details'>{game.metacritic ? game.metacritic : details.metacritic}</span>
           </li>
           <li className='detail-names'>
             Average Rating: <span className='listed-details'>{avgRate}</span>
           </li>
           <li className='detail-names'>
-            Release: <span className='listed-details'>{game.release}</span>
+            Release: <span className='listed-details'>{game.release ? game.release : details.metacritic}</span>
           </li>
           <div>
             {games[game.name] ? <span className='detail-names'>On shelf: <span className='detail-shelfname'>{games[game.name].Shelf.shelfName}</span></span> : buttonSelectForm(selectShelf)}

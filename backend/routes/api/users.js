@@ -168,7 +168,7 @@ router.post('/demo', asyncHandler(async (req, res) => {
     name: 'Minecraft',
     shelfId: newShelf2.id,
     status: 'Stopped',
-    hoursProgressed: 0.0
+    hoursProgressed: 194.0
   })
 
   const newGame3 = await Game.create({

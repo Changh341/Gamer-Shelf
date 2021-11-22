@@ -11,6 +11,12 @@ router.get('/', asyncHandler(async (req, res) => {
   res.send(games)
 }))
 
+router.get('/:name', asyncHandler(async (req, res) => {
+  const { name } = req.params
+  res.send(games[name])
+}))
+
+
 router.get('/:name/images', asyncHandler(async (req, res) => {
   const { name } = req.params
   const gameImage = games[name].imageURL

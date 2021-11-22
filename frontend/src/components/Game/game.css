@@ -17,3 +17,13 @@ th {
   width: 100px;
   height: 125px;
 }
+
+.game-shelf-portal {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  color: white;
+}
+.game-shelf-portal:hover{
+  text-decoration: underline;
+}

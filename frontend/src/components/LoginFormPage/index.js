@@ -26,6 +26,10 @@ function LoginFormPage({ setIsLogged }) {
       });
   };
 
+  const demoUser = () => {
+    dispatch(sessionActions.demo())
+  }
+
   return (
     <>
       <div id='sliding-one'>
@@ -69,6 +73,8 @@ function LoginFormPage({ setIsLogged }) {
             <button id='login-btn' type="submit">Log In</button>
           </form>
           <button onClick={(event) => { history.push('/signup') }} className='smaller-button'>Don't have an account?</button>
+          <span>Demo Gamershelf</span>
+          <button onClick={(event) => { demoUser() }} className='navbar-btns'>Demo Login</button>
         </div>
       </div>
     </>

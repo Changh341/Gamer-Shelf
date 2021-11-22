@@ -7,9 +7,9 @@ Live site: https://gamer-shelf.herokuapp.com/
 # Summary
 This project aims to help gamers organize their games. Whether gamers desire to make a wishlist of games or games they're playing. This website future scope is to have profiles and a social media aspect to show off progress and completion simliar to my anime list. As of 11/22/2021 the website allows gamers to make shelves and add games to them as well as the ability to review it for others.
 
-#Screenshots
+# Screenshots
 
-#Instructions on running the build
+# Instructions on running the build
 1. Pull everything onto local
 2. Run npm install on both backend and frontend
 3. On the backend, setup a .env matching the example and create your db user in postgresql.

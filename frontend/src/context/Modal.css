@@ -37,3 +37,11 @@
   height: 500px;
   overflow: auto;
 }
+
+#modal-content-review {
+  position: absolute;
+  background-color:#171a21;
+  width: 500px;
+  height: 340px;
+  overflow: auto;
+}

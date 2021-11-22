@@ -2,12 +2,19 @@ import { useSelector } from "react-redux";
 import { useEffect, useState } from 'react';
 import { csrfFetch } from "../../store/csrf";
 import './game.css'
+import { Modal } from "../../context/Modal";
+import ReviewEditSubmit from '../ReviewEditSubmit'
+
 
 const Game = ({ game, setRefresh }) => {
   const userShelves = useSelector((state) => state.shelf)
+  const userGames = useSelector((state) => state.game)
   let shelfIds = Object.keys(userShelves)
   const [isLoaded, setIsLoaded] = useState(false);
   const [image, setImage] = useState([]);
+  const [showModal, setShowModal] = useState(false)
+
+
 
 
   const [shelfChange, setShelfChange] = useState(false)
@@ -32,6 +39,10 @@ const Game = ({ game, setRefresh }) => {
         setIsLoaded(true);
       });
   }, []);
+
+  useEffect(() => {
+    renderEditWrite()
+  }, [userGames])
 
 
   const changingShelf = async (id) => {
@@ -78,30 +89,50 @@ const Game = ({ game, setRefresh }) => {
     }
   }
 
+  const renderEditWrite = () => {
+    const currentGame = userGames[game.name]
+    if (currentGame?.Review) {
+      return (
+        <>
+          {currentGame.Review.rating}
+          <button onClick={(event) => { setShowModal(true) }} className='smaller-button'>[Edit]</button>
+        </>
+      )
+    } else {
+      return (
+        <button onClick={(event) => { setShowModal(true) }} className='standard-btn'>Review</button>
+      )
+    }
+  }
+
   return (
-    <tr>
-      <td>{imageSetter()}</td>
-      <td>{game.name}</td>
-      <td>{game.status}</td>
-      <td>{game.hoursProgressed}</td>
-      <td>3.2</td>
-      <td></td>
-      <td className='tools-box'>
-        <button className='smaller-button' onClick={(event) => { setShelfChange(true) }}>[reshelf]{shelfChange && (
-          <div onChange={(event) => { changingShelf(event.target.value) }} className="profile-dropdown">
-            {shelfIds.map((shelfId) => {
-              return (
-                <div>
-                  <input type="radio" value={shelfId} name={`game${game.id}`} checked={currentShelf(shelfId)} /><span className='radio-label'>{userShelves[shelfId].shelfName}</span>
-                </div>
-              )
-            })}
-          </div>
-        )
-        }</button>
-        <button className='x-button' onClick={(event) => { handleRemove() }}>x</button>
-      </td>
-    </tr>
+    <>
+      <tr>
+        <td>{imageSetter()}</td>
+        <td>{game.name}</td>
+        <td>{game.status}</td>
+        <td>{game.hoursProgressed}</td>
+        <td>{renderEditWrite()}</td>
+        <td className='tools-box'>
+          <button className='smaller-button' onClick={(event) => { setShelfChange(true) }}>[reshelf]{shelfChange && (
+            <div onChange={(event) => { changingShelf(event.target.value) }} className="profile-dropdown">
+              {shelfIds.map((shelfId) => {
+                return (
+                  <div>
+                    <input type="radio" value={shelfId} name={`game${game.id}`} checked={currentShelf(shelfId)} /><span className='radio-label'>{userShelves[shelfId].shelfName}</span>
+                  </div>
+                )
+              })}
+            </div>
+          )
+          }</button>
+          <button className='x-button' onClick={(event) => { handleRemove() }}>x</button>
+        </td>
+      </tr>
+      {showModal && <Modal type='reviewModal' onClose={() => setShowModal(false)}>
+        <ReviewEditSubmit game={game} setShowModal={setShowModal} />
+      </Modal>}
+    </>
   )
 }
 

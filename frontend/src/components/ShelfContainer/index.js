@@ -36,7 +36,7 @@ const ShelfContainer = ({ setSelectedShelf }) => {
     <>
       <div id='shelf-container'>
         {showModal && <Modal type='shelfEditModal' onClose={() => setShowModal(false)}>
-          <ShelfEditForm />
+          <ShelfEditForm setSelectedShelf={setSelectedShelf} />
         </Modal>}
         <div>
           <span id='gamer-shelf-header'>Your Shelf</span>

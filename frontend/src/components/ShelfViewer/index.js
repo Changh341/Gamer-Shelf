@@ -30,7 +30,6 @@ const ShelfViewer = ({ selectedShelf }) => {
             <th>Game Name</th>
             <th>Status</th>
             <th>Hours</th>
-            <th>Avg Rating</th>
             <th>Review</th>
             <th></th>
           </tr>

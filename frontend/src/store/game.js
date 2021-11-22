@@ -3,6 +3,8 @@ const initialState = { null: null }
 
 const LOAD = 'games/LOAD'
 const ADD = 'games/ADD'
+const REVIEW = 'games/REVIEW'
+const DESTROY = 'review/DESTROY'
 
 const load = (games) => ({
   type: LOAD,
@@ -11,6 +13,16 @@ const load = (games) => ({
 
 const add = (game) => ({
   type: ADD,
+  game
+})
+
+const review = (game) => ({
+  type: REVIEW,
+  game
+})
+
+const deletion = (game) => ({
+  type: DESTROY,
   game
 })
 
@@ -43,6 +55,63 @@ export const addAGame = (payload) => async (dispatch) => {
   }
 }
 
+export const addAReview = (payload) => async (dispatch) => {
+  const { gameId } = payload
+  try {
+    const response = await csrfFetch(`/api/games/${gameId}/reviews`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(payload)
+    })
+    if (response.ok) {
+      const game = await response.json()
+      dispatch(review(game))
+    }
+  } catch (error) {
+    return error
+  }
+}
+
+export const editAReview = (payload) => async (dispatch) => {
+  const { gameId } = payload
+  try {
+    const response = await csrfFetch(`/api/games/${gameId}/reviews`, {
+      method: 'PUT',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(payload)
+    })
+    if (response.ok) {
+      const game = await response.json()
+      dispatch(review(game))
+    }
+  } catch (error) {
+    return error
+  }
+}
+
+export const destroyAReview = (payload) => async (dispatch) => {
+  const { gameId } = payload
+  try {
+    const response = await csrfFetch(`/api/games/${gameId}/reviews`, {
+      method: 'DELETE',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(payload)
+    })
+    if (response.ok) {
+      const game = await response.json()
+      dispatch(deletion(game))
+    }
+  } catch (error) {
+    return error
+  }
+}
+
 function gameReducer(state = initialState, action) {
   let newState = {};
   switch (action.type) {
@@ -54,6 +123,14 @@ function gameReducer(state = initialState, action) {
     case ADD:
       newState = { ...state }
       newState[action.name] = action
+      return newState
+    case REVIEW:
+      newState = { ...state }
+      newState[action.game.name] = action.game
+      return newState
+    case DESTROY:
+      newState = { ...state }
+      newState[action.game.name].Review = null
       return newState
     default: return state
   }

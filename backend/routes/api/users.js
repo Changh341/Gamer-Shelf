@@ -101,7 +101,7 @@ router.get('/:user/games', asyncHandler(async (req, res) => {
       where: { userId: user }
     },
     { model: Review }],
-    attributes: ['name']
+    attributes: ['name', 'id']
   })
   if (games) {
     res.json(games)

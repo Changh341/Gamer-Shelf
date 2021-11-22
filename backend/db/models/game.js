@@ -11,7 +11,7 @@ module.exports = (sequelize, DataTypes) => {
   }, {});
   Game.associate = function (models) {
     Game.belongsTo(models.Shelf, { foreignKey: 'shelfId' });
-    Game.hasOne(models.Review, { onDelete: 'cascade', foreignKey: 'gameId' });
+    Game.hasOne(models.Review, { foreignKey: 'gameId', onDelete: 'cascade' });
   };
   return Game;
 };

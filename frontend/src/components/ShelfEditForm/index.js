@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import ShelfSelect from "../ShelfSelect";
 
 
-const ShelfEditForm = () => {
+const ShelfEditForm = ({ setSelectedShelf }) => {
   const dispatch = useDispatch()
   const sessionUser = useSelector((state) => state.session.user);
   const userShelves = useSelector((state) => state.shelf)
@@ -17,7 +17,7 @@ const ShelfEditForm = () => {
       {shelfIds.map((shelfId) => {
         if (userShelves[shelfId] !== null) {
           return (
-            <ShelfSelect key={`${shelfId}`} shelf={userShelves[shelfId]} />
+            <ShelfSelect key={`${shelfId}`} setSelectedShelf={setSelectedShelf} shelf={userShelves[shelfId]} />
           )
         } else {
           return null

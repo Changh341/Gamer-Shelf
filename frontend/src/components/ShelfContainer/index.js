@@ -22,14 +22,17 @@ const ShelfContainer = ({ setSelectedShelf }) => {
   }, [shelfCount]);
 
   const handleSubmit = () => {
-    const payload = {
-      shelfName: addShelfValue,
-      userId: sessionUser.id,
-      type: 'Tracked'
+    if (addShelfValue) {
+
+      const payload = {
+        shelfName: addShelfValue,
+        userId: sessionUser.id,
+        type: 'Tracked'
+      }
+      dispatch(addShelf(payload))
+      setAddShelfInput(false)
+      setAddShelfValue('')
     }
-    dispatch(addShelf(payload))
-    setAddShelfInput(false)
-    setAddShelfValue('')
   }
 
   return (

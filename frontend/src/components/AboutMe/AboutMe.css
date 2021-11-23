@@ -1,0 +1,8 @@
+#about-me-view {
+  display: flex;
+  flex-direction: column;
+  color: white;
+  justify-content: center;
+  align-items: center;
+  padding: 30px;
+}

@@ -53,3 +53,11 @@
   height: 170px;
   overflow: auto;
 }
+
+#modal-about-me {
+  position: absolute;
+  background-color:#171a21;
+  width: 270px;
+  height: 170px;
+  overflow: auto;
+}

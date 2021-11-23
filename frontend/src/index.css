@@ -1,4 +1,6 @@
 /* TODO Add site wide styles */
+
+
 text {
   font-family: Arial, Helvetica, sans-serif;
   color: white;
@@ -6,9 +8,16 @@ text {
 body {  
   display: flex;
   justify-content: center;
-  width: 1500px;
-  height: auto;
-  background: #171a21;;
+  width: 100%;
+  min-height: 100vh;
+  background: #171a21;
+  overflow: scroll;
+}
+
+* { 
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 
@@ -64,3 +73,9 @@ li {
 a {
   color: lightblue;
 }
+
+#wrapped {
+  width: 100%;
+}
+
+

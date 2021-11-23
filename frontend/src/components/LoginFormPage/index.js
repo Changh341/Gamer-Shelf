@@ -32,49 +32,51 @@ function LoginFormPage({ setIsLogged }) {
 
   return (
     <>
-      <div id='sliding-one'>
-        <SlidingPictures pictures={slidingArr1} />
-      </div>
-      <div id='sliding-two'>
-        <SlidingPictures pictures={slidingArr2} />
-      </div>
-      <div id='sliding-three'>
-        <SlidingPictures pictures={slidingArr3} />
-      </div>
-      <div id='login-page'>
-        <div id='login-content'>
-          <img id='logo' src='https://i.imgur.com/86TBwiD.png'></img>
-          <form id='login-form' onSubmit={handleSubmit}>
-            <ul>
-              {errors.map((error, idx) => (
-                <li key={idx}>{error}</li>
-              ))}
-            </ul>
-            <label>
-              Username or Email
-              &nbsp;
-              <input
-                type="text"
-                value={credential}
-                onChange={(e) => setCredential(e.target.value)}
-                required
-              />
-            </label>
-            <label>
-              Password
-              &nbsp;
-              <input
-                type="password"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-                required
-              />
-            </label>
-            <button id='login-btn' type="submit">Log In</button>
-          </form>
-          <button onClick={(event) => { history.push('/signup') }} className='smaller-button'>Don't have an account?</button>
-          <span>Demo Gamershelf</span>
-          <button onClick={(event) => { demoUser() }} className='navbar-btns'>Demo Login</button>
+      <div id='login-wrap'>
+        <div id='sliding-one'>
+          <SlidingPictures pictures={slidingArr1} />
+        </div>
+        <div id='sliding-two'>
+          <SlidingPictures pictures={slidingArr2} />
+        </div>
+        <div id='sliding-three'>
+          <SlidingPictures pictures={slidingArr3} />
+        </div>
+        <div id='login-page'>
+          <div id='login-content'>
+            <img id='logo-login' src='https://i.imgur.com/86TBwiD.png'></img>
+            <form id='login-form' onSubmit={handleSubmit}>
+              <ul>
+                {errors.map((error, idx) => (
+                  <li key={idx}>{error}</li>
+                ))}
+              </ul>
+              <label>
+                Username or Email
+                &nbsp;
+                <input
+                  type="text"
+                  value={credential}
+                  onChange={(e) => setCredential(e.target.value)}
+                  required
+                />
+              </label>
+              <label>
+                Password
+                &nbsp;
+                <input
+                  type="password"
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                  required
+                />
+              </label>
+              <button id='login-btn' type="submit">Log In</button>
+            </form>
+            <button onClick={(event) => { history.push('/signup') }} className='smaller-button'>Don't have an account?</button>
+            <span>Demo Gamershelf</span>
+            <button onClick={(event) => { demoUser() }} className='navbar-btns'>Demo Login</button>
+          </div>
         </div>
       </div>
     </>

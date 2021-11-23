@@ -13,9 +13,11 @@ function Navigation({ isLoaded }) {
     sessionLinks = (
       <div id='navbar-div'>
         <img id='logo' src='https://i.imgur.com/86TBwiD.png'></img>
-        <NavLink activeClassName='navbar-btns-active' className='navbar-btns' exact={true} to='/'>My Shelf</NavLink>
-        <NavLink activeClassName='navbar-btns-active' className='navbar-btns' to='/browsegames'>Browse Games</NavLink>
-        <NavLink activeClassName='navbar-btns-active' className='navbar-btns' to='/user/page'>User</NavLink>
+        <div id='navbar-btn-div'>
+          <NavLink activeClassName='navbar-btns-active' className='navbar-btns' exact={true} to='/'>My Shelf</NavLink>
+          <NavLink activeClassName='navbar-btns-active' className='navbar-btns' to='/browsegames'>Browse Games</NavLink>
+          <NavLink activeClassName='navbar-btns-active' className='navbar-btns' to='/user/page'>User</NavLink>
+        </div>
       </div>
     );
   } else {

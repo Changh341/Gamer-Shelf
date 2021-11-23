@@ -13,7 +13,7 @@
   justify-content: center;
   align-items: center;
   width: 1300px;
-  height: 700px;
+  height: 900px;
 }
 
 #login-form {
@@ -25,25 +25,25 @@
 
 #sliding-one {
   position:absolute;
-  width: 99.2%;
+  width: 1300px;
   margin: 0 auto;	
   top:0;
-  left:-2%;
+  left: 16%;
 }
 
 #sliding-two {
   position: absolute;
   top: 37%;
-  left:-2%;
-  width: 99.2%;
+  left: 16%;
+  width: 1300px;
   margin: 0 auto;	
 }
 
 #sliding-three {
   position: absolute;
   bottom: 26%;
-  left:-2%;
-  width: 99.2%;
+  left: 16%;
+  width: 1300px;
   margin: 0 auto;	
 }
 
@@ -52,4 +52,17 @@
   color: #00adec;
   border: 1px solid #00adec;
   cursor: pointer;
+}
+
+#login-wrap{
+  width: 1300px;
+  height: 950px;
+  display: flex;
+  justify-content: center;
+
+}
+
+#logo-login {
+  height: 100px;
+  width: 300px;
 }

@@ -1,6 +1,7 @@
 #shelf-view {
   display: flex;
   flex-direction: row;
+  width: 100%;
 }
 
 #hp-lists{

@@ -61,4 +61,14 @@ export function Modal({ type, onClose, children }) {
       modalNode
     );
   }
+
+  if (type === 'aboutMe') {
+    return ReactDOM.createPortal(
+      <div id='modal'>
+        <div id='modal-background' onClick={onClose} />
+        <div id='modal-about-me'>{children}</div>
+      </div>,
+      modalNode
+    );
+  }
 }

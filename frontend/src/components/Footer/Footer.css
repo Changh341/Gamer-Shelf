@@ -1,0 +1,16 @@
+#footer {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+}
+
+
+#about-me {
+  color: white;
+  background-color: black;
+  border: 1px solid  #00adec ;
+  cursor: pointer;
+  width: 100px;
+  height: 30px;
+  border-radius: 12px;
+}

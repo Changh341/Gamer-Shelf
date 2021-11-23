@@ -66,7 +66,6 @@ const User = () => {
     <div id='user-info-logout-div'>
       <div id='user-info-div'>
         <div>
-
           <li>Email: <span className='user-info'>{sessionUser.email}</span></li>
           <li>Username: <span className='user-info'>{sessionUser.username}</span></li>
           <li><button className='navbar-btns' onClick={(event) => { logout(event) }}>Logout</button></li>

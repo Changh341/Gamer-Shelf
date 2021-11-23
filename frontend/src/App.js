@@ -9,9 +9,12 @@ import Navigation from './components/Navigation';
 import { Modal } from './context/Modal';
 import GameBrowser from './components/GameBrowser';
 import User from './components/User';
+import Footer from './components/Footer';
+import AboutMe from './components/AboutMe';
 function App() {
   const dispatch = useDispatch();
   const [isLoaded, setIsLoaded] = useState(false);
+  const [showModal, setShowModal] = useState(false)
 
   useEffect(() => {
     dispatch(sessionActions.restoreUser()).then(() => setIsLoaded(true));
@@ -42,7 +45,11 @@ function App() {
             </Switch>
           )}
         </div>
+        <Footer setShowModal={setShowModal} />
       </div>
+      {showModal && <Modal type='aboutMe' onClose={() => setShowModal(false)}>
+        <AboutMe />
+      </Modal>}
     </>
   );
 }

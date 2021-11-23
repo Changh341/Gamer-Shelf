@@ -2,6 +2,7 @@ const express = require('express');
 const asyncHandler = require('express-async-handler');
 const { check } = require('express-validator');
 const { handleValidationErrors } = require('../../utils/validation');
+const { Op } = require("sequelize");
 const faker = require('faker')
 
 const { setTokenCookie, requireAuth } = require('../../utils/auth');
@@ -121,6 +122,22 @@ router.get('/:user/games/all', asyncHandler(async (req, res) => {
   })
   if (games) {
     res.json(games)
+  }
+}))
+
+router.get('/:user/profile', asyncHandler(async (req, res) => {
+  const { user } = req.params
+  const shelves = await Game.findAll({
+    include: [{
+      model: Shelf,
+      attributes: ['shelfName'],
+      where: {
+        [Op.and]: [{ userId: user }, { [Op.or]: [{ type: 'Tracked' }, { type: 'Ongoing' }] }]
+      },
+    }]
+  })
+  if (shelves) {
+    res.json(shelves)
   }
 }))
 

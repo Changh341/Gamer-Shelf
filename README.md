@@ -44,5 +44,4 @@ A schema and wireframe of is included in the project Wiki and can be largely att
 ## Challenges
 I spent a lot of time on CSS for this project to make it as presentable as possible. Ive had to stop and really think about if this layout is ok and would users understand the function. Or if there would be any buttons somewhere they shouldnt be. I believe there are still much work to be done on the CSS such as adding different screen support.
 
-# Code Highlights
 

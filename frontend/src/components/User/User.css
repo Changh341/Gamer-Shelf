@@ -1,6 +1,29 @@
 #user-info-logout-div {
-  border:1px solid red;
-  height: 600px;
+  border:1px solid #00adec;
+  height: 100px;
   width: 800px;
   margin: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.user-info{
+  color: lightblue;
+}
+
+#stats-div {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  width: 50%;
+}
+
+#user-info-div {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  width: 50%;
 }

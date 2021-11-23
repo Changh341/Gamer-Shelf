@@ -27,6 +27,7 @@ const UpdateProgress = ({ game, setShowModal, setGameStatus, setGameProgress }) 
 
   return (
     <div id='update-progress-container'>
+      <span id='update-progress-header'>{game.name}</span>
       <form id='update-progress-form'>
         <div className='update-input-div'>
           <label className='label'>

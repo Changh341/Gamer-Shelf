@@ -10,12 +10,25 @@
   display: flex;
   justify-content: flex-end;
   width: 40%;
+  height: 40px;
+  margin-right: 5px;
+  padding: 5px;
 }
 
 .left-edit-line{
-  width:60%
+  width:70%;
+  padding: 10px;
 }
+
+.left-edit-line > *{
+  padding: 5px;
+}
+
 
 .shelf-name-edit {
   color: lightblue;
+}
+
+#selectbar-edit-shelf{
+  width: 100px;
 }

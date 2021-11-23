@@ -66,7 +66,7 @@ const ShelfSelect = ({ shelf, setSelectedShelf }) => {
       </div>
       <div className='right-edit-line'>
         {!renameInput && <button className='navbar-btns' onClick={(event) => { setRenameInput(true) }}>Rename</button>}
-        <select className='navbar-btns' value={typeSelect ? typeSelect : shelf.type} onChange={(event) => { handleChange(event.target.value) }} >
+        <select id='selectbar-edit-shelf' className='navbar-btns' value={typeSelect ? typeSelect : shelf.type} onChange={(event) => { handleChange(event.target.value) }} >
           <option value='Tracked'>Tracked</option>
           <option value='Not Tracked'>Not Tracked</option>
           <option value='Ongoing'>Ongoing</option>

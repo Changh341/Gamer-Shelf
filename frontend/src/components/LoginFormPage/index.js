@@ -46,9 +46,9 @@ function LoginFormPage({ setIsLogged }) {
           <div id='login-content'>
             <img id='logo-login' src='https://i.imgur.com/86TBwiD.png'></img>
             <form id='login-form' onSubmit={handleSubmit}>
-              <ul>
+              <ul className='error-list'>
                 {errors.map((error, idx) => (
-                  <li key={idx}>{error}</li>
+                  <li className='errors' key={idx}>{error}</li>
                 ))}
               </ul>
               <label>

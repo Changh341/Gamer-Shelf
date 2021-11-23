@@ -40,8 +40,8 @@ function SignupFormPage() {
           <div id='signup-div'>
             <div id='inner-signup-div'>
               <form id='signup-form' onSubmit={handleSubmit}>
-                <ul>
-                  {errors.map((error, idx) => <li key={idx}>{error}</li>)}
+                <ul className='error-list'>
+                  {errors.map((error, idx) => <li className='errors' key={idx}>{error}</li>)}
                 </ul>
                 <label>
                   Email

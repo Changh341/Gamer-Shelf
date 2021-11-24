@@ -10,27 +10,36 @@ const ReviewEditSubmit = ({ game, setShowModal }) => {
   const userGames = useSelector((state) => state.game)
   const [rating, setRating] = useState(5.0)
   const [context, setContext] = useState('')
+  const [error, setError] = useState(false)
+  const validCharacters = /[a-z]+|[A-Z]+|[0-9]/;
 
   const handleSubmit = (event, type) => {
     event.preventDefault()
-    if (type === 'POST') {
-      const payload = {
-        content: context,
-        rating,
-        gameId: userGames[game.name].id
+    if (context.length < 126 && context.length) {
+      if (context.match(validCharacters)) {
+
+        if (type === 'POST') {
+          const payload = {
+            content: context,
+            rating,
+            gameId: userGames[game.name].id
+          }
+          dispatch(addAReview(payload))
+        }
+        if (type === 'EDIT') {
+          const payload = {
+            content: context,
+            rating,
+            reviewId: userGames[game.name].Review.id,
+            gameId: userGames[game.name].id
+          }
+          dispatch(editAReview(payload))
+        }
+        setShowModal(false)
+      } else {
+        setError(true)
       }
-      dispatch(addAReview(payload))
     }
-    if (type === 'EDIT') {
-      const payload = {
-        content: context,
-        rating,
-        reviewId: userGames[game.name].Review.id,
-        gameId: userGames[game.name].id
-      }
-      dispatch(editAReview(payload))
-    }
-    setShowModal(false)
   }
 
   const handleDelete = () => {
@@ -48,6 +57,22 @@ const ReviewEditSubmit = ({ game, setShowModal }) => {
       setRating(userGames[game.name].Review.rating)
     }
   }, [])
+
+  const checkLength = () => {
+    if (context.length < 126) {
+      return (
+        <span id='character-count'>
+          {context.length}/125 Character Count
+        </span>
+      )
+    } else {
+      return (
+        <span id='character-count-over'>
+          {context.length}/125 Character Count
+        </span>
+      )
+    }
+  }
 
   return (
     <div className='review-post-edit-container'>
@@ -67,6 +92,8 @@ const ReviewEditSubmit = ({ game, setShowModal }) => {
           {userGames[game.name].Review ? <button id='edit-review' className='navbar-btns' onClick={(event) => { handleSubmit(event, 'EDIT') }}>Edit</button> : <button id='post-review' className='navbar-btns' onClick={(event) => { handleSubmit(event, 'POST') }}>Post</button>}
         </div>
       </form>
+      {checkLength()}
+      {error ? <span className='errors'>Cant be empty</span> : null}
     </div>
   )
 }

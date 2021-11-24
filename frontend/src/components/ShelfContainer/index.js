@@ -12,27 +12,53 @@ const ShelfContainer = ({ setSelectedShelf }) => {
   const [addShelfInput, setAddShelfInput] = useState(false)
   const [addShelfValue, setAddShelfValue] = useState('')
   const [showModal, setShowModal] = useState(false);
+  const [showError, setShowError] = useState(false);
 
 
   let shelfIds = Object.keys(userShelves)
   let shelfCount = shelfIds.length
-
+  const validCharacters = /[a-z]+|[A-Z]+|[0-9]/;
   useEffect(() => {
     dispatch(getShelves(sessionUser.id));
   }, [shelfCount]);
 
   const handleSubmit = () => {
-    if (addShelfValue) {
-
-      const payload = {
-        shelfName: addShelfValue,
-        userId: sessionUser.id,
-        type: 'Tracked'
+    if (addShelfValue && addShelfValue.length < 26) {
+      if (addShelfValue.match(validCharacters)) {
+        const payload = {
+          shelfName: addShelfValue,
+          userId: sessionUser.id,
+          type: 'Tracked'
+        }
+        dispatch(addShelf(payload))
+        setAddShelfInput(false)
+        setAddShelfValue('')
+      } else {
+        setShowError(true)
       }
-      dispatch(addShelf(payload))
-      setAddShelfInput(false)
-      setAddShelfValue('')
     }
+  }
+
+  const shelfNameLength = () => {
+    if (addShelfValue.length < 26) {
+      return (
+        <span id='character-count'>
+          {addShelfValue.length}/25 Character Count
+        </span>
+      )
+    } else {
+      return (
+        <span id='character-count-over'>
+          {addShelfValue.length}/25 Character Count
+        </span>
+      )
+    }
+  }
+
+  const resetInputOnClose = () => {
+    setAddShelfInput(false)
+    setAddShelfValue('')
+    setShowError(false)
   }
 
   return (
@@ -63,7 +89,11 @@ const ShelfContainer = ({ setSelectedShelf }) => {
         {addShelfInput && <div>
           <input className='standard-input' placeholder='Enter shelf name' value={addShelfValue} onChange={(event) => { setAddShelfValue(event.target.value) }} required={true}></input>
           <button className='standard-btn' onClick={(event) => { handleSubmit() }}>Add</button>
-          <button className='standard-btn' onClick={(event) => { setAddShelfInput(false) }}>Close</button>
+          <button className='standard-btn' onClick={(event) => { resetInputOnClose() }}>Close</button>
+          <div id='shelf-input-errors'>
+            {addShelfValue.length ? shelfNameLength() : null}
+            {showError ? <span className='errors'>Cant be empty</span> : null}
+          </div>
         </div>}
       </div>
     </>

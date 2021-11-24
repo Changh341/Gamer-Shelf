@@ -9,6 +9,10 @@ const UpdateProgress = ({ game, setShowModal, setGameStatus, setGameProgress }) 
   const sessionUser = useSelector((state) => state.session.user);
   const [status, setStatus] = useState('')
   const [hoursProgressed, setHoursProgressed] = useState('')
+  const [showError, setShowError] = useState(false)
+  const validCharacters = /[a-z]+|[A-Z]+|[0-9]/;
+
+
 
   useEffect(() => {
     setStatus(game.status)
@@ -16,12 +20,17 @@ const UpdateProgress = ({ game, setShowModal, setGameStatus, setGameProgress }) 
   }, [])
 
   const handleUpdate = async (event, gameId) => {
-    event.preventDefault()
-    const payload = { status, hoursProgressed, gameId }
-    await dispatch(updateAGame(payload))
-    setGameStatus(status)
-    setGameProgress(hoursProgressed)
-    setShowModal(false)
+    if (hoursProgressed.match(validCharacters)) {
+
+      event.preventDefault()
+      const payload = { status, hoursProgressed, gameId }
+      await dispatch(updateAGame(payload))
+      setGameStatus(status)
+      setGameProgress(hoursProgressed)
+      setShowModal(false)
+    } else {
+      setShowError(true)
+    }
   }
 
 
@@ -49,8 +58,9 @@ const UpdateProgress = ({ game, setShowModal, setGameStatus, setGameProgress }) 
             <input id='hours-input' required onChange={(event) => { setHoursProgressed(event.target.value) }} type='number' value={hoursProgressed}></input>
           </label>
         </div>
-        <div className='update-input-div'>
+        <div className='update-input-div-submit'>
           <button className='navbar-btns' onClick={(event) => { handleUpdate(event, game.id) }}>Update</button>
+          {showError && <span className='errors'>Enter hours</span>}
         </div>
       </form>
     </div >

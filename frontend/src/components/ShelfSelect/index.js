@@ -9,6 +9,7 @@ import './ShelfSelect.css'
 const ShelfSelect = ({ shelf, setSelectedShelf }) => {
   const dispatch = useDispatch()
   const sessionUser = useSelector((state) => state.session.user);
+  const validCharacters = /[a-z]+|[A-Z]+|[0-9]/;
 
 
 
@@ -20,20 +21,28 @@ const ShelfSelect = ({ shelf, setSelectedShelf }) => {
   const [typeSelect, setTypeSelect] = useState(false)
   const [renameInput, setRenameInput] = useState(false)
   const [renameValue, setRenameValue] = useState(shelf.shelfName)
+  const [showError, setShowError] = useState(false)
 
   const handleChange = (selectedOption) => {
     setTypeSelect(selectedOption)
   };
 
   const handleNameChange = async (name) => {
-    const payload = {
-      id: shelf.id,
-      shelfName: name,
-      userId: sessionUser.id,
-      type: shelf.type
+    if (renameValue && renameValue.length < 26) {
+      if (renameValue.match(validCharacters)) {
+
+        const payload = {
+          id: shelf.id,
+          shelfName: name,
+          userId: sessionUser.id,
+          type: shelf.type
+        }
+        dispatch(editShelf(payload))
+        setRenameInput(false)
+      } else {
+        setShowError(true)
+      }
     }
-    dispatch(editShelf(payload))
-    setRenameInput(false)
   }
 
   const handleTypeChange = (type) => {
@@ -44,8 +53,25 @@ const ShelfSelect = ({ shelf, setSelectedShelf }) => {
       type
     }
     dispatch(editShelf(payload))
-
   }
+
+  const shelfNameLength = () => {
+    if (renameValue.length < 26) {
+      return (
+        <span id='character-count'>
+          {renameValue.length}/25 Character Count
+        </span>
+      )
+    } else {
+      return (
+        <span id='character-count-over'>
+          {renameValue.length}/25 Character Count
+        </span>
+      )
+    }
+  }
+
+
 
   return (
     <li className='shelf-edit-line' key={`Edit shelf ${shelf.id}`}>
@@ -60,7 +86,12 @@ const ShelfSelect = ({ shelf, setSelectedShelf }) => {
             <button className='navbar-btns' onClick={(event) => {
               setRenameInput(false);
               setRenameValue(shelf.shelfName)
+              setShowError(false)
             }}>Cancel</button>
+            <div id='shelf-input-errors'>
+              {renameValue.length ? shelfNameLength() : null}
+              {showError ? <span className='errors'>Cant be empty</span> : null}
+            </div>
           </>
         }
       </div>

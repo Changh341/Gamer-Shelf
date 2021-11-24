@@ -14,6 +14,7 @@ const GameDetail = ({ game }) => {
   const [avgRate, setAvgRate] = useState(0)
   const [details, setDetails] = useState([]);
   const [isLoaded, setIsLoaded] = useState(false)
+  const [error, setError] = useState(false)
   let shelfIds = Object.keys(userShelves)
 
 
@@ -26,6 +27,9 @@ const GameDetail = ({ game }) => {
       }
       dispatch(addAGame(payload))
       setShowAddGame(false)
+      setError(false)
+    } else {
+      setError(true)
     }
   }
 
@@ -33,7 +37,7 @@ const GameDetail = ({ game }) => {
     return (
       <div className='add-shelf-select'>
         <select className='navbar-btns' value={selectShelf} onChange={(event) => { setSelectShelf(event.target.value) }}>
-          <option value={0}>Select Shelf</option>
+          <option value={''}>Select Shelf</option>
           {shelfIds.map((shelfId) => {
             return (
               <option key={`shelf ${shelfId}`} value={shelfId} >{userShelves[shelfId].shelfName}</option>
@@ -108,6 +112,9 @@ const GameDetail = ({ game }) => {
           </li>
           <div>
             {games[game.name] ? <span className='detail-names'>On shelf: <span className='detail-shelfname'>{games[game.name].Shelf.shelfName}</span></span> : buttonSelectForm(selectShelf)}
+          </div>
+          <div>
+            {error ? <span className='errors detail-names'>Select a valid shelf</span> : null}
           </div>
         </div>
         <div>

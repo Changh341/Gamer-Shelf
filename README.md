@@ -8,6 +8,9 @@ Live site: https://gamer-shelf.herokuapp.com/
 This project aims to help gamers organize their games. Whether gamers desire to make a wishlist of games or games they're playing. This website future scope is to have profiles and a social media aspect to show off progress and completion simliar to my anime list. As of 11/22/2021 the website allows gamers to make shelves and add games to them as well as the ability to review it for others.
 
 # Screenshots
+![Capture2](https://user-images.githubusercontent.com/83061284/143091859-55cb9bb4-1302-4c6b-9230-7b46a0106906.JPG)
+![Capture3](https://user-images.githubusercontent.com/83061284/143091862-8d57d804-fdd3-4f42-a600-0a2f321766c4.JPG)
+![Capture](https://user-images.githubusercontent.com/83061284/143091863-36bad400-9817-40aa-9352-9e4e1b7a08aa.JPG)
 
 # Instructions on running the build
 1. Pull everything onto local
@@ -41,5 +44,4 @@ A schema and wireframe of is included in the project Wiki and can be largely att
 ## Challenges
 I spent a lot of time on CSS for this project to make it as presentable as possible. Ive had to stop and really think about if this layout is ok and would users understand the function. Or if there would be any buttons somewhere they shouldnt be. I believe there are still much work to be done on the CSS such as adding different screen support.
 
-# Code Highlights
 

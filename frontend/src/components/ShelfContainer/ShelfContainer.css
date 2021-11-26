@@ -22,12 +22,26 @@ width: 225px;
 
 #character-count {
   color: lightblue;
+  font-size: 13px;
 }
 
 #character-count-over {
   color: rgb(200, 50, 50);
+  font-size: 13px;
 }
 
 .errors {
   color: rgb(200, 50, 50);
+}
+
+#shelf-container {
+  background-color: #252733;
+  padding: 12px;
+  padding-top: 19px;
+}
+
+#bottom-shelf-container {
+  padding-left: 12px;
+  background-color: #252733;
+  padding-bottom: 12px;
 }

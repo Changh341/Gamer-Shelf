@@ -25,6 +25,10 @@ td{
   text-align: center;
 }
 
+th{
+  background-color:#252733;
+}
+
 .smaller-button {
   font-size: 9px;
   background: transparent;
@@ -46,9 +50,9 @@ td{
 }
 
 .standard-btn {
-  border: 1px solid white;
+  border: 1px solid lightblue;
   color: white;
-  background-color: #171a21;
+  background-color: #252733;
   cursor: pointer;
 }
 
@@ -79,3 +83,6 @@ a {
 }
 
 
+.just-text{
+  color: white;
+}

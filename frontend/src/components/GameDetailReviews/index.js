@@ -27,7 +27,7 @@ const GameDetailReviews = ({ game, setAvgRate }) => {
   }, [game, userGames]);
 
   const calcAvgRate = () => {
-    if (allRating) {
+    if (allRating.length) {
       const sum = allRating.reduce((a, b) => a + b, 0)
       const average = parseFloat(sum / allRating.length).toFixed(2)
       setAvgRate(average)

@@ -114,7 +114,7 @@ const Game = ({ game, setRefresh }) => {
 
   return (
     <>
-      <tr>
+      <tr className='game-row'>
         <td>{imageSetter()}</td>
         <td><button onClick={(event) => { setShowGameDetail(true) }} className='game-shelf-portal'>{game.name}</button></td>
         <td>{gameStatus}</td>

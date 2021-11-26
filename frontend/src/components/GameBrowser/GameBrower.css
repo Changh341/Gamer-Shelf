@@ -4,6 +4,7 @@
   justify-content: center;
   flex-wrap: wrap;
   width: 1300px;
+  background-color: #252733;
 }
 
 .game-card {

@@ -15,8 +15,8 @@ const ReviewEditSubmit = ({ game, setShowModal }) => {
 
   const handleSubmit = (event, type) => {
     event.preventDefault()
-    if (context.length < 126 && context.length) {
-      if (context.match(validCharacters)) {
+    if (context.length < 126) {
+      if (context.match(validCharacters) && context.length) {
 
         if (type === 'POST') {
           const payload = {

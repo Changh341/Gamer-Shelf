@@ -84,7 +84,7 @@ const ShelfContainer = ({ setSelectedShelf }) => {
           }
         })}
       </div>
-      <div>
+      <div id='bottom-shelf-container'>
         {!addShelfInput && <button className='standard-btn' onClick={(event) => setAddShelfInput(true)}>Add Shelf</button>}
         {addShelfInput && <div>
           <input className='standard-input' placeholder='Enter shelf name' value={addShelfValue} onChange={(event) => { setAddShelfValue(event.target.value) }} required={true}></input>

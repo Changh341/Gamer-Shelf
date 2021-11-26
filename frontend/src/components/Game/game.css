@@ -27,3 +27,8 @@ th {
 .game-shelf-portal:hover{
   text-decoration: underline;
 }
+
+.game-row{
+  background-color:#252733;
+
+}

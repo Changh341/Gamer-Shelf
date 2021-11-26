@@ -14,6 +14,9 @@ const GameBrowser = () => {
   const [isLoaded, setIsLoaded] = useState(false);
   const [items, setItems] = useState([]);
   const [refresh, setRefresh] = useState(false)
+  const [search, setSearch] = useState('')
+  const [results, setResults] = useState([])
+
 
   const getAllGame = (userId) => {
     dispatch(getUserGames(userId))
@@ -22,6 +25,10 @@ const GameBrowser = () => {
   useEffect(() => {
     dispatch(getShelves(sessionUser.id));
   }, []);
+
+  useEffect(() => {
+    findTheGame()
+  }, [search])
 
   const gamesCount = Object.keys(userGames)
 
@@ -45,22 +52,52 @@ const GameBrowser = () => {
   }, []);
   if (!sessionUser) return <Redirect to="/login" />;
 
+
   const gameKeys = Object.keys(items)
   const sorted = gameKeys.sort()
 
+  const findTheGame = () => {
+    const query = search.toLowerCase()
+    const res = gameKeys.filter((game) => {
+      const toLower = game.toLowerCase()
+      if (query.includes('[') | query.includes('\\') || query.includes('*') || query.includes('(') || query.includes(')') || query.includes('+')) {
+        return ''
+      } else {
+        return toLower.match(query)
+      }
+    })
+    setResults(res)
+  }
 
-  return (
-    <div id='game-browser'>
-      {sorted.map((game) => {
+  const searchFunction = () => {
+    if (results.length) {
+      return results.map((game) => {
         return (
           <div className='game-card' key={items[game].name}>
             <GameCard key={`${items[game].name}`} game={items[game]} />
           </div>
         )
       })
+    } else {
+      return <span className='just-text'>No results</span>
+    }
+  }
 
-      }
-    </div>
+  return (
+    <>
+      <input placeholder='Search' onChange={(event) => { setSearch(event.target.value) }}></input>
+      <div id='game-browser'>
+        {search.length ? searchFunction() : sorted.map((game) => {
+          return (
+            <div className='game-card' key={items[game].name}>
+              <GameCard key={`${items[game].name}`} game={items[game]} />
+            </div>
+          )
+        })
+
+        }
+      </div>
+    </>
   )
 }
 

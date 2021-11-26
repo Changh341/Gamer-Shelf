@@ -11,7 +11,7 @@ const GameDetail = ({ game }) => {
   const games = useSelector((state) => state.game)
   const [showAddGame, setShowAddGame] = useState(false)
   const [selectShelf, setSelectShelf] = useState(false)
-  const [avgRate, setAvgRate] = useState(0)
+  const [avgRate, setAvgRate] = useState('No Reviews')
   const [details, setDetails] = useState([]);
   const [isLoaded, setIsLoaded] = useState(false)
   const [error, setError] = useState(false)

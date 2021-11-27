@@ -4,7 +4,7 @@ const { check } = require('express-validator');
 const { handleValidationErrors } = require('../../utils/validation');
 const { Op } = require("sequelize");
 const faker = require('faker')
-
+const titles = require('../../data/games.json')
 const { setTokenCookie, requireAuth } = require('../../utils/auth');
 const { User, Shelf, Game, Review } = require('../../db/models');
 
@@ -141,11 +141,17 @@ router.get('/:user/profile', asyncHandler(async (req, res) => {
   }
 }))
 
+function randomNumber(min, max) {
+  return Math.floor(Math.random() * (max - min) + min);
+}
+const titleKeys = Object.keys(titles)
+
 router.post('/demo', asyncHandler(async (req, res) => {
   const randomRating = Math.floor(Math.random() * 5) + 1;
   const email = faker.internet.email()
   const username = faker.internet.userName()
   const password = faker.internet.password()
+  const number = randomNumber(0, 86)
 
   const user = await User.signup({ email, username, password });
   const newShelf = await Shelf.create({
@@ -189,7 +195,7 @@ router.post('/demo', asyncHandler(async (req, res) => {
   })
 
   const newGame3 = await Game.create({
-    name: 'Raft',
+    name: titleKeys[number],
     shelfId: newShelf3.id,
     status: 'Completed',
     hoursProgressed: 51.0

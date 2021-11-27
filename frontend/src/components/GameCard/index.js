@@ -16,8 +16,7 @@ const GameCard = ({ game }) => {
       {showTitle && <div className='game-title-hover' onMouseLeave={(event) => setShowTitle(false)} onClick={(event) => { setShowModal(true) }}>{game.name}</div>}
       <img
         onMouseEnter={(event) => setShowTitle(true)}
-
-
+        loading='lazy'
         src={game.imageURL}>
       </img>
       {showModal && <Modal type='gameDetails' onClose={() => setShowModal(false)}>

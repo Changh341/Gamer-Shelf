@@ -56,15 +56,14 @@ const GameDetailReviews = ({ game, setAvgRate }) => {
               <li key={item.Review.id} className='review-container'>
                 <div className='username-rating-container'>
                   <span className='username-review'>{item.Shelf.User.username}{checkIfUser(item.Shelf.User.id)}</span>
-
-                  <div className='rating-container'>
-                    <span className='rating-review'>Rated {allRating.push(Number(item.Review.rating)) && item.Review.rating}/5.0</span>
+                  <div id='review-content-container'>
+                    <span className='content-review'>
+                      {item.Review.content}
+                    </span>
                   </div>
                 </div>
-                <div>
-                  <span className='content-review'>
-                    {item.Review.content}
-                  </span>
+                <div className='rating-container'>
+                  <span className='rating-review'>{allRating.push(Number(item.Review.rating)) && item.Review.rating}</span>
                 </div>
               </li>
               {showModal && <Modal type='reviewModal' onClose={() => setShowModal(false)}>

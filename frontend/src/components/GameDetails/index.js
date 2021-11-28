@@ -36,7 +36,7 @@ const GameDetail = ({ game }) => {
   const buttonSelectForm = (id) => {
     return (
       <div className='add-shelf-select'>
-        <select className='navbar-btns' value={selectShelf} onChange={(event) => { setSelectShelf(event.target.value) }}>
+        <select className='offcolor-buttons' value={selectShelf} onChange={(event) => { setSelectShelf(event.target.value) }}>
           <option value={''}>Select Shelf</option>
           {shelfIds.map((shelfId) => {
             return (
@@ -44,7 +44,7 @@ const GameDetail = ({ game }) => {
             )
           })}
         </select>
-        <button className='navbar-btns' onClick={(event) => { addGame(id) }}>Add to Shelf</button>
+        <button className='offcolor-buttons' onClick={(event) => { addGame(id) }}>Add to Shelf</button>
       </div>
 
     )
@@ -83,11 +83,11 @@ const GameDetail = ({ game }) => {
 
 
   return (
-    <div>
+    <div id='game-detail-container'>
       <div className='top-half-details'>
         <div>{imageSetter()}</div>
         <div className='title-context-div'>
-          <h2>
+          <h2 id='game-title'>
             {game.name}
           </h2>
           {game.context ? game.context : details.context}
@@ -117,8 +117,8 @@ const GameDetail = ({ game }) => {
             {error ? <span className='errors detail-names'>Select a valid shelf</span> : null}
           </div>
         </div>
-        <div>
-          <h3>Reviews</h3>
+        <div id='reviews-section'>
+          <h3 id='reviews-header'>Reviews</h3>
           <div className='reviews-div'>
             <GameDetailReviews game={game} setAvgRate={setAvgRate} />
           </div>

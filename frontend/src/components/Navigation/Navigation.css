@@ -39,12 +39,19 @@
 .navbar-btns {
   background: transparent;
   color: #00adec;
-  border: 1px solid #00adec;
   cursor: pointer;
   text-decoration: none;
-  padding: 6px;
+  padding: 12px;
+  margin-left: 10px;
+}
+.navbar-btns:hover {
+  background: gray;
+  color: white;
+  border-radius: 10px;
 }
 
 .navbar-btns-active {
-  text-decoration: underline;
+  background: #626262;
+  color: white;
+  border-radius: 10px;
 }

@@ -68,7 +68,7 @@ const User = () => {
         <div>
           <li>Email: <span className='user-info'>{sessionUser.email}</span></li>
           <li>Username: <span className='user-info'>{sessionUser.username}</span></li>
-          <li><button className='navbar-btns' onClick={(event) => { logout(event) }}>Logout</button></li>
+          <li><button className='offcolor-buttons' onClick={(event) => { logout(event) }}>Logout</button></li>
         </div>
       </div>
       <div id='stats-div'>

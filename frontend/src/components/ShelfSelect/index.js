@@ -82,8 +82,8 @@ const ShelfSelect = ({ shelf, setSelectedShelf }) => {
         {renameInput &&
           <>
             <input className='input-bar' value={renameValue} onChange={(event) => { setRenameValue(event.target.value) }}></input>
-            <button className='navbar-btns' onClick={(event) => { handleNameChange(renameValue) }}>Save</button>
-            <button className='navbar-btns' onClick={(event) => {
+            <button className='offcolor-buttons' onClick={(event) => { handleNameChange(renameValue) }}>Save</button>
+            <button className='offcolor-buttons' onClick={(event) => {
               setRenameInput(false);
               setRenameValue(shelf.shelfName)
               setShowError(false)
@@ -96,14 +96,14 @@ const ShelfSelect = ({ shelf, setSelectedShelf }) => {
         }
       </div>
       <div className='right-edit-line'>
-        {!renameInput && <button className='navbar-btns' onClick={(event) => { setRenameInput(true) }}>Rename</button>}
-        <select id='selectbar-edit-shelf' className='navbar-btns' value={typeSelect ? typeSelect : shelf.type} onChange={(event) => { handleChange(event.target.value) }} >
+        {!renameInput && <button className='offcolor-buttons' onClick={(event) => { setRenameInput(true) }}>Rename</button>}
+        <select id='selectbar-edit-shelf' className='offcolor-buttons' value={typeSelect ? typeSelect : shelf.type} onChange={(event) => { handleChange(event.target.value) }} >
           <option value='Tracked'>Tracked</option>
           <option value='Not Tracked'>Not Tracked</option>
           <option value='Ongoing'>Ongoing</option>
         </select>
 
-        <button className='navbar-btns' onClick={(event) => { handleTypeChange(typeSelect) }}>Change</button>
+        <button className='offcolor-buttons' onClick={(event) => { handleTypeChange(typeSelect) }}>Change</button>
       </div>
     </li>
   )

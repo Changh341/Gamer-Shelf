@@ -61,6 +61,7 @@ th{
   color: lightblue;
   background-color: #171a21;
   outline: none;
+  width: 125px;
 }
 
 li {
@@ -85,4 +86,14 @@ a {
 
 .just-text{
   color: white;
+}
+
+
+.offcolor-buttons{
+  background: black;
+  color: #00adec;
+  cursor: pointer;
+  border: 1px solid lightgray;
+  text-decoration: none;
+  padding: 4px;
 }

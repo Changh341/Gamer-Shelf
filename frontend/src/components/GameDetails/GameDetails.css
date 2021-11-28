@@ -6,16 +6,17 @@
 .top-half-details {
   display: flex;
   flex-direction: row;
-  padding: 10px;
 }
 
 .bottom-half-details {
   display: flex;
   flex-direction: row;
+
 }
 
 .title-context-div {
   padding: 12px;
+  padding-left: 27px;
 }
 
 .listed-details {
@@ -55,12 +56,30 @@
 }
 
 .reviews-div {
-  width: 680px;
-  height: 290px;
+  width: 667px;
+  height: 280px;
   overflow: auto;
+  margin-top: 10px;
 }
 
 .add-shelf-select {
   margin-left: 8px;
   margin-top: 5px;
+}
+
+#game-title{
+  color: white;
+  padding-bottom: 15px;
+}
+
+#game-detail-container {
+  padding: 20px;
+}
+
+#reviews-header{
+  color: white;
+}
+
+#reviews-section{
+  padding: 12px;
 }

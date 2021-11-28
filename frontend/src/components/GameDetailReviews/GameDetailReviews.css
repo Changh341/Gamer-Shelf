@@ -1,7 +1,6 @@
 .username-review{
   color: lightblue;
   font-weight: 800;
-  width: 40%
 }
 
 .content-review{
@@ -11,21 +10,28 @@
 
 .review-container {
   display: flex;
-  flex-direction: column;
-  height: 75px;
-  border-top: 1px solid lightskyblue;
+  flex-wrap: wrap;
+  height: 100px;
 }
 
 .username-rating-container {
-  display: flex;
-  flex-direction: row;
+  height: 25px;
+  width: 80%;
 }
 
 .rating-container {
   display: flex;
-  justify-content: flex-end;
-  align-items: flex-end;
-  width: 60%;
-  font-style: italic;
+  justify-content: center;
+  align-items: center;
+  width: 20%;
 }
 
+.rating-review {
+  padding: 20px;
+  
+}
+
+#review-content-container {
+  width: 500px;
+  padding-top: 5px;
+}

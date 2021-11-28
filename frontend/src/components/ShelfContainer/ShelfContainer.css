@@ -16,8 +16,7 @@
 #shelf-input-errors {
 display: flex;
 flex-direction: column;
-align-items: flex-end;
-width: 225px;
+width: 110px;
 }
 
 #character-count {

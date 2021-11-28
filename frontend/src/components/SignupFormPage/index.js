@@ -83,7 +83,7 @@ function SignupFormPage() {
                     required
                   />
                 </label>
-                <button className='navbar-btns' type="submit">Sign Up</button>
+                <button className='offcolor-buttons' type="submit">Sign Up</button>
               </form>
               <button className='smaller-button' onClick={(event) => { history.push('/login') }}>Already registered?</button>
             </div>

@@ -4,8 +4,12 @@
   cursor: pointer;
   width: max-content;
   color: lightblue;
-
 }
+
+.clickable-shelf:hover {
+  text-decoration: underline;
+}
+
 
 #gamer-shelf-header {
   font-size: 17px;

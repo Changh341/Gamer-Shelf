@@ -2,6 +2,10 @@
   color: lightblue;
 }
 
+.radio-label:hover{
+  cursor: initial;
+}
+
 td {
   color: white;
 }
@@ -30,5 +34,22 @@ th {
 
 .game-row{
   background-color:#252733;
+}
 
+#inner-shelf-select-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+#special-button-for-reshelf{
+  font-size: 9px;
+  background: transparent;
+  border: none;
+  margin: 3px;
+  color: lightblue;
+}
+
+#special-button-for-reshelf:hover{
+  text-decoration: underline;
 }

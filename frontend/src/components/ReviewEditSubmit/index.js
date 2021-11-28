@@ -89,7 +89,7 @@ const ReviewEditSubmit = ({ game, setShowModal }) => {
             <option>2.0</option>
             <option>1.0</option>
           </select>
-          {userGames[game.name].Review ? <button id='edit-review' className='navbar-btns' onClick={(event) => { handleSubmit(event, 'EDIT') }}>Edit</button> : <button id='post-review' className='navbar-btns' onClick={(event) => { handleSubmit(event, 'POST') }}>Post</button>}
+          {userGames[game.name].Review ? <button id='edit-review' className='offcolor-buttons' onClick={(event) => { handleSubmit(event, 'EDIT') }}>Edit</button> : <button id='post-review' className='offcolor-buttons' onClick={(event) => { handleSubmit(event, 'POST') }}>Post</button>}
         </div>
       </form>
       {checkLength()}

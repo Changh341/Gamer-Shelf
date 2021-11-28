@@ -3,6 +3,7 @@
   z-index: 1;
   background-color: #1f2126;
   display: flex;
+  padding: 12px;
   flex-direction: column;
   width: 120px;
   border-radius: 15px;

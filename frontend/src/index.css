@@ -56,6 +56,10 @@ th{
   cursor: pointer;
 }
 
+.standard-btn:hover {
+  background: #626262;
+}
+
 .standard-input {
   border: 1px solid white;
   color: lightblue;
@@ -90,10 +94,15 @@ a {
 
 
 .offcolor-buttons{
-  background: black;
-  color: #00adec;
+  background: transparent;
+  color: lightblue;
   cursor: pointer;
-  border: 1px solid lightgray;
+  border: 1px solid #00adec;
   text-decoration: none;
   padding: 4px;
+  margin: 1px;
+}
+
+.offcolor-buttons:hover{
+  background: #626262;
 }

@@ -59,7 +59,7 @@ const UpdateProgress = ({ game, setShowModal, setGameStatus, setGameProgress }) 
           </label>
         </div>
         <div className='update-input-div-submit'>
-          <button className='navbar-btns' onClick={(event) => { handleUpdate(event, game.id) }}>Update</button>
+          <button className='offcolor-buttons' onClick={(event) => { handleUpdate(event, game.id) }}>Update</button>
           {showError && <span className='errors'>Enter hours</span>}
         </div>
       </form>

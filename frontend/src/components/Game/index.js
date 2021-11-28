@@ -122,15 +122,17 @@ const Game = ({ game, setRefresh }) => {
         <td>{renderEditWrite()}</td>
         <td className='tools-box'>
           <button className='smaller-button' onClick={(event) => { setShowUpdateProgress(true) }}>[update progress]</button>
-          <button className='smaller-button' onClick={(event) => { setShelfChange(true) }}>[reshelf]{shelfChange && (
+          <button id='special-button-for-reshelf' onClick={(event) => { setShelfChange(true) }}>[reshelf]{shelfChange && (
             <div onChange={(event) => { changingShelf(event.target.value) }} className="profile-dropdown">
-              {shelfIds.map((shelfId) => {
-                return (
-                  <div>
-                    <input type="radio" value={shelfId} name={`game${game.id}`} checked={currentShelf(shelfId)} /><span className='radio-label'>{userShelves[shelfId].shelfName}</span>
-                  </div>
-                )
-              })}
+              <div id='inner-shelf-select-container'>
+                {shelfIds.map((shelfId) => {
+                  return (
+                    <div>
+                      <input type="radio" className='offcolor-buttons' value={shelfId} name={`game${game.id}`} checked={currentShelf(shelfId)} /><span className='radio-label'>{userShelves[shelfId].shelfName}</span>
+                    </div>
+                  )
+                })}
+              </div>
             </div>
           )
           }</button>

@@ -58,7 +58,6 @@ router.post('/:id/reviews', asyncHandler(async (req, res) => {
     const response = await Game.findOne({
       include: [{
         model: Shelf,
-        attributes: ['id'],
         include: { model: User, attributes: ['username'] }
       },
       { model: Review }],
@@ -80,7 +79,6 @@ router.put('/:id/reviews', asyncHandler(async (req, res) => {
     const response = await Game.findOne({
       include: [{
         model: Shelf,
-        attributes: ['id'],
         include: { model: User, attributes: ['username'] }
       },
       { model: Review }],

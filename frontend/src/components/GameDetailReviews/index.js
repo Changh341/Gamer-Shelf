@@ -46,6 +46,27 @@ const GameDetailReviews = ({ game, setAvgRate }) => {
     }
   }
 
+  const determineRating = (rating) => {
+    if (rating < 3) {
+      return (
+        <div className='rating-container-red'>
+          <span className='rating-review'>{allRating.push(Number(rating)) && rating}</span>
+        </div>
+      )
+    } else if (rating == 3) {
+      return (
+        <div className='rating-container-yellow'>
+          <span className='rating-review'>{allRating.push(Number(rating)) && rating}</span>
+        </div>
+      )
+    } else {
+      return (
+        <div className='rating-container-green'>
+          <span className='rating-review'>{allRating.push(Number(rating)) && rating}</span>
+        </div>
+      )
+    }
+  }
 
   return (
     <>
@@ -63,7 +84,7 @@ const GameDetailReviews = ({ game, setAvgRate }) => {
                   </div>
                 </div>
                 <div className='rating-container'>
-                  <span className='rating-review'>{allRating.push(Number(item.Review.rating)) && item.Review.rating}</span>
+                  {determineRating(item.Review.rating)}
                 </div>
               </li>
               {showModal && <Modal type='reviewModal' onClose={() => setShowModal(false)}>

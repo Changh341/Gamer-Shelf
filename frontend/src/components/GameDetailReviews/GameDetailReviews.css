@@ -28,10 +28,38 @@
 
 .rating-review {
   padding: 20px;
-  
+  font-weight: bold;
+  color: ;
 }
 
 #review-content-container {
   width: 500px;
   padding-top: 5px;
+}
+
+.rating-container-red {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 30%;
+  height: 35%;
+  background-color: red;
+}
+
+.rating-container-yellow {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 30%;
+  height: 35%;
+  background-color: darkgoldenrod;
+}
+
+.rating-container-green {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 30%;
+  height: 35%;
+  background-color: green;
 }

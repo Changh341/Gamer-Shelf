@@ -46,7 +46,7 @@ function LoginFormPage({ setIsLogged }) {
           <div className='description'>
             <div className='inner-description-div'>
               <span className='just-text'>About GamerShelf</span>
-              <span className='just-text'>Track your favorite games.</span>
+              <span className='just-text'>Track progress in games.</span>
               <span className='just-text'>Find new games to play.</span>
               <span className='just-text'>Contribute and help others find games.</span>
             </div>

@@ -1,10 +1,6 @@
 /* TODO Add site wide styles */
 
 
-text {
-  font-family: Arial, Helvetica, sans-serif;
-  color: white;
-}
 body {  
   display: flex;
   justify-content: center;
@@ -12,6 +8,7 @@ body {
   min-height: 100vh;
   background: #171a21;
   overflow: scroll;
+  font-family: 'Cambria', Georgia, serif;
 }
 
 * { 

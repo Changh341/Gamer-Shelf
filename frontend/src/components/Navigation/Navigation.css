@@ -1,40 +1,30 @@
-.profile-dropdown {
-  position: absolute;
-  z-index: 1;
-  background-color: #1f2126;
-  display: flex;
-  padding: 12px;
-  flex-direction: column;
-  width: 120px;
-  border-radius: 15px;
-  height: 100px;
-  overflow: auto;
-}
+
 
 #navbar-div {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  height: 125px;
-  width: 1300px;
+  height:7.81rem;
+  width: 81.25rem;
 }
 
 #navbar-div > * {
-  height: 25px;
+  height: 1.56rem;
 }
 
 #logo {
   position: absolute;
-  left: 20%;
-  height: 100px;
-  width: 300px;
+  left: 20vw;
+  top: 1vh;
+  height: 6.25rem;
+  width: 18.75rem;
 }
 
 #navbar-btn-div {
   position: absolute;
-  left: 20%;
-  top: 9.5%;
+  left: 20vw;
+  top: 12.5vh;
 }
 
 .navbar-btns {
@@ -42,8 +32,8 @@
   color: #00adec;
   cursor: pointer;
   text-decoration: none;
-  padding: 12px;
-  margin-left: 10px;
+  padding: 0.75rem;
+  margin-left: 0.625rem;
 }
 .navbar-btns:hover {
   background: gray;

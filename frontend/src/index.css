@@ -8,11 +8,22 @@ text {
 body {  
   display: flex;
   justify-content: center;
+  align-items: center;
+  flex-direction: column;
   width: 100vw;
   min-height: 100vh;
   background: #171a21;
   overflow: scroll;
 }
+
+body>*{
+  border: 1px solid red;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 
 * { 
   margin: 0;
@@ -113,10 +124,27 @@ a {
 
 html {
   font-size: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 @media (max-width: 900px){
   html{
     font-size: 16px;
+    display: inline-block;
+    
   }
+  body{
+    width: auto;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  body>* {
+    width: 100vw;
+  }
+
 }

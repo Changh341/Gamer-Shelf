@@ -23,29 +23,26 @@ function App() {
   return (
     <>
       <Navigation isLoaded={isLoaded} />
-      <div id='wrapped'>
-        {isLoaded && (
-          <Switch>
-            <Route path='/signup'>
-              <SignupFormPage />
-            </Route>
-            <Route path='/login'>
-              <LoginFormPage />
-            </Route>
-            <Route path='/' exact={true}>
-              <HomePage />
-            </Route>
-            <Route path='/browsegames'>
-              <GameBrowser />
-            </Route>
-            <Route path='/user/page'>
-              <User />
-            </Route>
-          </Switch>
-        )}
-      </div>
+      {isLoaded && (
+        <Switch>
+          <Route path='/signup'>
+            <SignupFormPage />
+          </Route>
+          <Route path='/login'>
+            <LoginFormPage />
+          </Route>
+          <Route path='/' exact={true}>
+            <HomePage />
+          </Route>
+          <Route path='/browsegames'>
+            <GameBrowser />
+          </Route>
+          <Route path='/user/page'>
+            <User />
+          </Route>
+        </Switch>
+      )}
       <Footer setShowModal={setShowModal} />
-
       {
         showModal && <Modal type='aboutMe' onClose={() => setShowModal(false)}>
           <AboutMe />

@@ -43,14 +43,6 @@ function LoginFormPage({ setIsLogged }) {
           <SlidingPictures pictures={slidingArr3} />
         </div>
         <div id='login-page'>
-          <div className='description'>
-            <div className='inner-description-div'>
-              <span className='just-text'>About GamerShelf</span>
-              <span className='just-text'>Track progress in games.</span>
-              <span className='just-text'>Find new games to play.</span>
-              <span className='just-text'>Contribute and help others find games.</span>
-            </div>
-          </div>
           <div id='login-content'>
             <img id='logo-login' src='https://i.imgur.com/86TBwiD.png'></img>
             <form id='login-form' onSubmit={handleSubmit}>

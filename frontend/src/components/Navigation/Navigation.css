@@ -17,7 +17,7 @@
   align-items: center;
   justify-content: center;
   height: 125px;
-  width: 1300px;
+  width: 65rem;
 }
 
 #navbar-div > * {
@@ -25,16 +25,11 @@
 }
 
 #logo {
-  position: absolute;
-  top: 0.5rem;
-  left: 21rem;
   height: 100px;
   width: 300px;
 }
 
 #navbar-btn-div {
-  position: absolute;
-  left:21rem;
   top: 5rem;
 }
 

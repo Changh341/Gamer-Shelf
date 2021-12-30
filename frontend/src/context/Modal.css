@@ -57,7 +57,7 @@
 #modal-about-me {
   position: absolute;
   background-color:#171a21;
-  width: 270px;
+  width: 20rem;
   height: 170px;
   overflow: auto;
 }

@@ -5,13 +5,13 @@
 }
 
 #hp-lists{
-  position: sticky;
-  width: 150px;
-  height: 500px;
+  position: relative;
+  width: 9.375rem;
+  height: 31.25rem;
   display: flex;
   flex-direction: column;
   overflow: hidden;
-  margin-left: 40px;
+  margin-left: 1.5rem
 }
 
 

@@ -3,7 +3,7 @@
   border-top: 1px solid grey;
   padding: 20px;
   overflow: hidden;
-  width: 100%;
+  width: 70rem;
   margin: 0 auto;	
 	position: absolute;
   z-index: -1;
@@ -20,7 +20,7 @@
 .sliding-image {
   display: block;
   margin-left: 20px;
-  width: 100px;
+  width: 6rem;
   height: 150px;
 }
 

@@ -12,7 +12,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 1300px;
+  width: 65rem;
   height: 900px;
 }
 
@@ -25,25 +25,25 @@
 
 #sliding-one {
   position:absolute;
-  width: 1300px;
+  width: 65rem;
   margin: 0 auto;	
   top:0;
-  left: 16%;
+ 
 }
 
 #sliding-two {
   position: absolute;
   top: 37%;
-  left: 16%;
-  width: 1300px;
-  margin: 0 auto;	
+
+  width: 65rem;
+    margin: 0 auto;	
 }
 
 #sliding-three {
   position: absolute;
   bottom: 26%;
-  left: 16%;
-  width: 1300px;
+
+  width: 65rem;
   margin: 0 auto;	
 }
 
@@ -55,7 +55,7 @@
 }
 
 #login-wrap{
-  width: 1300px;
+  width: 65rem;
   height: 950px;
   display: flex;
   justify-content: center;
@@ -66,18 +66,3 @@
   width: 300px;
 }
 
-.description{
-  width: 200px;
-  background-color: black;
-  height: 300px;
-  padding: 12px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.inner-description-div {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}

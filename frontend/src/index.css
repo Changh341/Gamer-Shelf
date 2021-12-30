@@ -10,7 +10,7 @@ body {
   align-items: center;
   flex-direction: column;
   width: 100rem;
-  min-height: 90vh;
+  min-height: 800px;
   background: #171a21;
   overflow: hidden;
   font-family: 'Cambria', Georgia, serif;

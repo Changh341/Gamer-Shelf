@@ -1,10 +1,13 @@
 /* TODO Add site wide styles */
 
-
+html{
+  width: 100vh;
+  font-size: 18px;
+}
 body {  
   display: flex;
   justify-content: center;
-  width: 100%;
+  width: 100vw;
   min-height: 100vh;
   background: #171a21;
   overflow: scroll;

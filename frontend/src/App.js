@@ -11,6 +11,7 @@ import GameBrowser from './components/GameBrowser';
 import User from './components/User';
 import Footer from './components/Footer';
 import AboutMe from './components/AboutMe';
+import UserOnly from './components/auth/Protect';
 function App() {
   const dispatch = useDispatch();
   const [isLoaded, setIsLoaded] = useState(false);
@@ -32,15 +33,15 @@ function App() {
             <Route path='/login'>
               <LoginFormPage />
             </Route>
-            <Route path='/' exact={true}>
+            <UserOnly path='/' exact={true}>
               <HomePage />
-            </Route>
-            <Route path='/browsegames'>
+            </UserOnly>
+            <UserOnly path='/browsegames'>
               <GameBrowser />
-            </Route>
-            <Route path='/user/page'>
+            </UserOnly>
+            <UserOnly path='/user/page'>
               <User />
-            </Route>
+            </UserOnly>
           </Switch>
         )}
       </div>

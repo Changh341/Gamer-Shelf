@@ -63,19 +63,21 @@ const User = () => {
 
   if (!sessionUser) return <Redirect to="/login" />;
   return (
-    <div id='user-info-logout-div'>
-      <div id='user-info-div'>
-        <div>
-          <li>Email: <span className='user-info'>{sessionUser.email}</span></li>
-          <li>Username: <span className='user-info'>{sessionUser.username}</span></li>
-          <li><button className='offcolor-buttons' onClick={(event) => { logout(event) }}>Logout</button></li>
+    <div id='user-page'>
+      <div id='user-info-logout-div'>
+        <div id='user-info-div'>
+          <div>
+            <li>Email: <span className='user-info'>{sessionUser.email}</span></li>
+            <li>Username: <span className='user-info'>{sessionUser.username}</span></li>
+            <li><button className='offcolor-buttons' onClick={(event) => { logout(event) }}>Logout</button></li>
+          </div>
         </div>
-      </div>
-      <div id='stats-div'>
-        <div>
-          <li>Games completed: {isLoaded ? gamesCompleted() : <span>Loading...</span>}</li>
-          <li>Number of hours logged: {isLoaded ? gamesHour() : <span>Loading..</span>} </li>
-          <li>Number of games owned: {isLoaded ? gamesOwned() : <span>Loading..</span>} </li>
+        <div id='stats-div'>
+          <div>
+            <li>Games completed: {isLoaded ? gamesCompleted() : <span>Loading...</span>}</li>
+            <li>Number of hours logged: {isLoaded ? gamesHour() : <span>Loading..</span>} </li>
+            <li>Number of games owned: {isLoaded ? gamesOwned() : <span>Loading..</span>} </li>
+          </div>
         </div>
       </div>
     </div>

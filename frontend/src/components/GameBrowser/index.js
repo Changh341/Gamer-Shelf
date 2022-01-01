@@ -84,8 +84,8 @@ const GameBrowser = () => {
   }
 
   return (
-    <>
-      <input placeholder='Search' onChange={(event) => { setSearch(event.target.value) }}></input>
+    <div className="browser-page">
+      <input id='gamesearch' placeholder='Search' onChange={(event) => { setSearch(event.target.value) }}></input>
       <div id='game-browser'>
         {search.length ? searchFunction() : sorted.map((game) => {
           return (
@@ -97,7 +97,7 @@ const GameBrowser = () => {
 
         }
       </div>
-    </>
+    </div>
   )
 }
 

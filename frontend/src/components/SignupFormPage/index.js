@@ -31,66 +31,63 @@ function SignupFormPage() {
   };
 
   return (
-    <>
-      <div id='signup-wrap'>
-        <div id='signup-page'>
-          <div id='left-signup'>
-            <Slider />
-          </div>
-          <div id='signup-div'>
-            <div id='inner-signup-div'>
-              <form id='signup-form' onSubmit={handleSubmit}>
-                <ul className='error-list'>
-                  {errors.map((error, idx) => <li className='errors' key={idx}>{error}</li>)}
-                </ul>
-                <label>
-                  Email
-                  &nbsp;
-                  <input
-                    type="text"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                    required
-                  />
-                </label>
-                <label>
-                  Username
-                  &nbsp;
-                  <input
-                    type="text"
-                    value={username}
-                    onChange={(e) => setUsername(e.target.value)}
-                    required
-                  />
-                </label>
-                <label>
-                  Password
-                  &nbsp;
-                  <input
-                    type="password"
-                    value={password}
-                    onChange={(e) => setPassword(e.target.value)}
-                    required
-                  />
-                </label>
-                <label>
-                  Confirm Password
-                  &nbsp;
-                  <input
-                    type="password"
-                    value={confirmPassword}
-                    onChange={(e) => setConfirmPassword(e.target.value)}
-                    required
-                  />
-                </label>
-                <button className='offcolor-buttons' type="submit">Sign Up</button>
-              </form>
-              <button className='smaller-button' onClick={(event) => { history.push('/login') }}>Already registered?</button>
-            </div>
-          </div>
+    <div id='signup-wrap'>
+      <div id='left-signup'>
+        <Slider />
+      </div>
+      <div id='signup-div'>
+        <div id='inner-signup-div'>
+          <form id='signup-form' onSubmit={handleSubmit}>
+            <ul className='error-list'>
+              {errors.map((error, idx) => <li className='errors' key={idx}>{error}</li>)}
+            </ul>
+            <label>
+              Email
+              &nbsp;
+              <input
+                type="text"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                required
+              />
+            </label>
+            <label>
+              Username
+              &nbsp;
+              <input
+                type="text"
+                value={username}
+                onChange={(e) => setUsername(e.target.value)}
+                required
+              />
+            </label>
+            <label>
+              Password
+              &nbsp;
+              <input
+                type="password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                required
+              />
+            </label>
+            <label>
+              Confirm Password
+              &nbsp;
+              <input
+                type="password"
+                value={confirmPassword}
+                onChange={(e) => setConfirmPassword(e.target.value)}
+                required
+              />
+            </label>
+            <button className='offcolor-buttons' type="submit">Sign Up</button>
+          </form>
+          <button className='smaller-button' onClick={(event) => { history.push('/login') }}>Already registered?</button>
         </div>
       </div>
-    </>
+    </div>
+
   );
 }
 

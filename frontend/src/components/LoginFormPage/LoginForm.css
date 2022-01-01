@@ -12,7 +12,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 65rem;
+  width: 100%;
   height: 900px;
 }
 
@@ -25,17 +25,16 @@
 
 #sliding-one {
   position:absolute;
-  width: 65rem;
+  width: 100%;
   margin: 0 auto;	
   top:0;
- 
 }
 
 #sliding-two {
   position: absolute;
   top: 37%;
 
-  width: 65rem;
+  width: 100%;
     margin: 0 auto;	
 }
 
@@ -43,7 +42,7 @@
   position: absolute;
   bottom: 26%;
 
-  width: 65rem;
+  width: 100%;
   margin: 0 auto;	
 }
 
@@ -55,10 +54,12 @@
 }
 
 #login-wrap{
-  width: 65rem;
-  height: 950px;
+  width: 100%;
   display: flex;
   justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
 }
 
 #logo-login {

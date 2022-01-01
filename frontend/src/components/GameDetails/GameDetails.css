@@ -56,8 +56,8 @@
 }
 
 .reviews-div {
-  width: 667px;
-  height: 280px;
+  width: 35rem;
+  height: 13rem;
   overflow: auto;
   margin-top: 10px;
 }

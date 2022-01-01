@@ -22,8 +22,8 @@
 #modal-content-gameDetails {
   position: absolute;
   background-color:#1f2126;
-  width: 1000px;
-  height: 700px;
+  width: 50rem;
+  height: 35rem;
   color: #00adec;
   border-radius: 12px;
   overflow: auto;
@@ -33,31 +33,28 @@
 #modal-content-editShelf {
   position: absolute;
   background-color:#171a21;
-  width: 550px;
-  height: 500px;
+  width: 30rem;
+  height: 25rem;
   overflow: auto;
 }
 
 #modal-content-review {
   position: absolute;
   background-color:#171a21;
-  width: 500px;
-  height: 340px;
-  overflow: auto;
+  width: 40rem;
+  height: auto;
 }
 
 #modal-progress-update {
   position: absolute;
   background-color:#171a21;
-  width: 270px;
-  height: 170px;
-  overflow: auto;
+  width: 12rem;
+  height: auto;
 }
 
 #modal-about-me {
   position: absolute;
   background-color:#171a21;
-  width: 270px;
-  height: 170px;
-  overflow: auto;
+  width: 20rem;
+  height: auto;
 }

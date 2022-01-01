@@ -55,6 +55,7 @@ function LoginFormPage({ setIsLogged }) {
             &nbsp;
             <input
               type="text"
+              className="standard-input"
               value={credential}
               onChange={(e) => setCredential(e.target.value)}
               required
@@ -65,6 +66,7 @@ function LoginFormPage({ setIsLogged }) {
             &nbsp;
             <input
               type="password"
+              className="standard-input"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               required

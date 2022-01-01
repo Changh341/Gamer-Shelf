@@ -57,6 +57,10 @@ th{
   cursor: pointer;
 }
 
+.standard-input {
+  width: 7rem;
+}
+
 .standard-btn:hover {
   background: #626262;
 }

@@ -763,5 +763,23 @@
     "context": "Battlefield: Bad Company 2 is a first-person shooter video game developed by the Swedish firm DICE and published by Electronic Arts for Microsoft Windows, PlayStation 3, Xbox 360, iOS and Kindle Fire systems. It is a direct sequel to Battlefield: Bad Company and is part of the Battlefield game series. It was released worldwide in March 2010. The iOS port was released on the App Store on December 16, 2010. A Kindle Fire version was released in June 2012. The game is primarily a squad-level first-person shooter based in a contemporary modern warfare setting. Additionally, the game includes a single-player campaign, where the player re-assumes the role of Preston Marlowe, the protagonist of the original game. The game's Frostbite 1.5 engine allows for destructible environments. Multiplayer maps, which allow for five different game modes, contain a wide selection of vehicles, aircraft and emplacements.",
     "metacritic": "87%",
     "category": "First Person Shooter"
+  },
+  "Don't Starve": {
+    "name": "Don't Starve",
+    "developers": "Klei",
+    "release": "Apr 23, 2013",
+    "imageURL": "https://upload.wikimedia.org/wikipedia/en/thumb/d/d2/Don%27t_Starve_cover.jpg/220px-Don%27t_Starve_cover.jpg",
+    "context": "Don't Starve is a survival video game developed by the Canadian indie video game developer Klei Entertainment. The game was initially released for Microsoft Windows, OS X, and Linux on April 23, 2013. A PlayStation 4 port, renamed Don't Starve: Giant Edition, became available the following year (with PlayStation Vita and PlayStation 3 versions released on September 2014 and June 2015 respectively, and an Xbox One version released in August 2015). Don't Starve for iOS, renamed Don't Starve: Pocket Edition was released on July 9, 2015. An Android version was released on October 20, 2016. Downloadable content titled Reign of Giants was released on April 30, 2014, and a multiplayer expansion called Don't Starve Together became free for existing users on June 3, 2015. On Steam, this game is able to be purchased with a free copy for a friend.[6] A Nintendo Switch port came out on April 12, 2018.",
+    "metacritic": "79%",
+    "category": "Survival"
+  },
+  "The Forest": {
+    "name": "The Forest",
+    "developers": "Endnight Games",
+    "release": "Apir 30 2018",
+    "imageURL": "https://upload.wikimedia.org/wikipedia/en/thumb/4/46/TheForest_Game.jpg/220px-TheForest_Game.jpg",
+    "context": "The Forest is a survival horror video game developed and published by Endnight Games. The game takes place on a remote heavily forested peninsula, where the player character Eric Leblanc must fight off cannibalistic monsters while searching for his son Timmy after a plane crash. The game features nonlinear gameplay in an open world environment played from a first-person perspective, with no set missions or quests, empowering the player to make their own decisions for survival. Following a four-year long early access beta phase, the game was released for Microsoft Windows in April 2018, and for the PlayStation 4 in November 2018. The game was a commercial success, selling over five million copies by the end of 2018. A sequel game, Sons of the Forest, is under development.",
+    "metacritic": "83%",
+    "category": "Sutvival Horror"
   }
 }

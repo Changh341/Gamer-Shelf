@@ -776,10 +776,55 @@
   "The Forest": {
     "name": "The Forest",
     "developers": "Endnight Games",
-    "release": "Apir 30 2018",
+    "release": "Apr 30, 2018",
     "imageURL": "https://upload.wikimedia.org/wikipedia/en/thumb/4/46/TheForest_Game.jpg/220px-TheForest_Game.jpg",
     "context": "The Forest is a survival horror video game developed and published by Endnight Games. The game takes place on a remote heavily forested peninsula, where the player character Eric Leblanc must fight off cannibalistic monsters while searching for his son Timmy after a plane crash. The game features nonlinear gameplay in an open world environment played from a first-person perspective, with no set missions or quests, empowering the player to make their own decisions for survival. Following a four-year long early access beta phase, the game was released for Microsoft Windows in April 2018, and for the PlayStation 4 in November 2018. The game was a commercial success, selling over five million copies by the end of 2018. A sequel game, Sons of the Forest, is under development.",
     "metacritic": "83%",
     "category": "Sutvival Horror"
+  },
+  "Destiny": {
+    "name": "Destiny",
+    "developers": "Bungie",
+    "release": "Sept 9, 2014",
+    "imageURL": "https://upload.wikimedia.org/wikipedia/en/thumb/0/06/Destiny_XBO.jpg/220px-Destiny_XBO.jpg",
+    "context": "Destiny is an online-only multiplayer first-person shooter video game developed by Bungie and previously published by Activision. Destiny is now self-published by Bungie after separating from Activision in 2019.[3] It was released worldwide on September 9, 2014, for the PlayStation 3, PlayStation 4, Xbox 360, and Xbox One consoles. Destiny marked Bungie's first new console franchise since the Halo series, and it was the first game in a ten-year agreement between Bungie and Activision. Set in a mythic science fiction world, the game features a multiplayer shared-world environment with elements of role-playing games. Activities in Destiny are divided among player versus environment (PvE) and player versus player (PvP) game types. In addition to normal story missions, PvE features three-player strikes and six-player raids. A free roam patrol mode is also available for each destination which feature public events. PvP features objective-based modes, as well as traditional deathmatch game modes.",
+    "metacritic": "83%",
+    "category": "First Person Shooter"
+  },
+  "Tom Clancy's Rainbow Six Siege": {
+    "name": "Tom Clancy's Rainbow Six Siege",
+    "developers": "Ubisoft",
+    "release": "Dec 1, 2015",
+    "imageURL": "https://upload.wikimedia.org/wikipedia/en/thumb/4/47/Tom_Clancy%27s_Rainbow_Six_Siege_cover_art.jpg/220px-Tom_Clancy%27s_Rainbow_Six_Siege_cover_art.jpg",
+    "context": "Tom Clancy's Rainbow Six Siege is an online tactical shooter video game developed by Ubisoft Montreal and published by Ubisoft. It was released worldwide for Microsoft Windows, PlayStation 4, and Xbox One on December 1, 2015; the game was also released for PlayStation 5 and Xbox Series X/S exactly five years later on December 1, 2020. The game puts heavy emphasis on environmental destruction and cooperation between players. Each player assumes control of an attacker or a defender in different gameplay modes such as rescuing a hostage, defusing a bomb, and taking control of an objective within a room. The title has no campaign but features a series of short, offline missions called, situations that can be played solo. These missions have a loose narrative, focusing on recruits going through training to prepare them for future encounters with the White Masks, a terrorist group that threatens the safety of the world.",
+    "metacritic": "79%",
+    "category": "Tactical FPS"
+  },
+  "SWAT 4": {
+    "name": "SWAT 4",
+    "developers": "Irrational Games",
+    "release": "Apr 5, 2005",
+    "imageURL": "https://upload.wikimedia.org/wikipedia/en/thumb/7/71/SWAT_4_Coverart.png/220px-SWAT_4_Coverart.png",
+    "context": "SWAT 4 is a 2005 tactical shooter video game developed by Irrational Games and published by Vivendi Universal Games exclusively for Microsoft Windows. It was built on Irrational Games' Vengeance Engine powered by Unreal Engine 2 technology. In SWAT 4, the player leads a SWAT element in resolving various situations, such as Hostage Rescues or apprehensions of dangerous subjects, simulating the experiences of real-life Special Weapons and Tactics operators.",
+    "metacritic": "85%",
+    "category": "Tactical FPS"
+  },
+  "Animal Crossing": {
+    "name": "Animal Crossing",
+    "developers": "Nintendo",
+    "release": "Sept 16, 2002",
+    "imageURL": "https://upload.wikimedia.org/wikipedia/en/8/82/Animal_Crossing_Coverart.png",
+    "context": "Animal Crossing is an endless and non-linear game in which a human takes up residence in a village inhabited by anthropomorphic animals. The main goal of the game is to save money in order to pay off the mortgage on the human's house. This requires collecting natural materials and selling them. The human can engage in everyday life in the village, interact with the animals, attend events, and contribute to the village's development. The game's western localization differs significantly from the original release in that Japanese holidays and cultural references are replaced with Western ones.",
+    "metacritic": "87%",
+    "category": "Simulation"
+  },
+  "Borderlands": {
+    "name": "Borderlands",
+    "developers": "Gearbox Software",
+    "release": "Oct 26, 2009",
+    "imageURL": "https://upload.wikimedia.org/wikipedia/en/thumb/0/01/Borderlandscover.jpg/220px-Borderlandscover.jpg",
+    "context": "Borderlands is a 2009 open world action role-playing first-person looter shooter video game. It is the first game in the Borderlands series, developed by Gearbox Software, and published by 2K Games for PlayStation 3, Xbox 360, Windows, Mac OS X and Shield Android TV. The game was released worldwide in October 2009, with the Mac OS X version being released on December 3, 2010 by Feral Interactive. The game's story focuses on a group of four Vault Hunters, who travel to the distant planet of Pandora to search for the Vault, which is rumored to contain advanced alien technology and other priceless riches. The hunters piece together clues to find the Vault while battling the savage wildlife of Pandora and the bandits and outlaws that populate the planet, ultimately banding together to prevent the Atlas Corporation and its privately-funded paramilitary forces from reaching the Vault first.",
+    "metacritic": "81%",
+    "category": "Looter Shooter"
   }
 }

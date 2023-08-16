@@ -2,7 +2,7 @@
 Gamer Shelf
 
 # Live Site
-Live site: https://gamer-shelf.herokuapp.com/
+Live site: https://gamer-shelf.herokuapp.com/ (Taken down)
 
 # Summary
 This project aims to help gamers organize their games. Whether gamers desire to make a wishlist of games or games they're playing. This website future scope is to have profiles and a social media aspect to show off progress and completion simliar to my anime list. As of 11/22/2021 the website allows gamers to make shelves and add games to them as well as the ability to review it for others.
